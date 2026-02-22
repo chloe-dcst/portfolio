@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Régression sur des données réelles</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo" >Portfolio</a>
+
+        <nav class="navbar">
+            <a href="../../index.html">Accueil</a>
+            <a href="../../projets.html">Projets</a>
+            <a href="../../about.html">À propos de moi</a>
+        </nav>
+
+    </header>
+
+    <section class="projets">
+        <div class="projet-content">
+            <a href="../../projets.html" alt="page projet" class="retour">Retour</a>
+
+            <h1>Régression sur des données réelles</h1>
+
+            <div class="description">
+                <div class="bulle-content">
+                    <span class="bulle">R</span>
+                    <span class="bulle">Excel</span>
+                    <span class="bulle">Word</span>
+                </div>
+                <div class="texte-content">
+                    <span class="texte">durée : 2 semaines | groupe : 2 personnes</span>
+                </div>
+
+            <img src="../../assets/photo/prediction.jpg" alt="code R et rapport" class="project-image">
+
+            <h2>L'objectif</h2>
+            <p>Déterminer le meilleur modèle de prédiction pour prédire le prix de vente des logements à Paris.</p>
+
+            <h3>La description du projet</h3>
+            <p>
+                Pour prédire la valeur foncière des biens immobiliers à Paris, nous disposions de 2 fichier : <br>
+                - un fichier où il y avait les valeurs à predire : "test" <br>
+                - un fichier d'entraînement, pour tester nos modèles : "train" <br>
+                Sur Excel, nous avons débuté ce projet par déterminer des catégories pour avoir un modèle par catégorie et tenter d'être le plus 
+                précis possible.
+                Après avoir supprimé 10 % des biens les plus chers et les moins chers du fichier "train", nous avons d'abord séparé les maisons et 
+                les appartements, puis les appartements selon le nombre de pièces. Ensuite, nous avons subdivisé chaque catégorie en regroupant les 
+                logements par arrondissement et en calculant une moyenne des prix de vente. Nous avons ensuite testé les quatre modèles sur chaque 
+                catégorie pour déterminer le meilleur dans chaque cas. Notre conclusion a été que le modèle linéaire était le meilleur pour chaque 
+                catégorie.<br>
+                Pour appliquer nos modèles sur R et sur le fichier "test", nous avons reproduit la même répartition des logements et appliqué nos 
+                modèles pour prédire les valeurs foncières. Ensuite, nous avons rédigé un rapport détaillé expliquant notre démarche.
+            </p>    
+
+            <h3>L'évaluation</h3>
+            <p>
+                - La méthodologie utilisée pour élaborer le modèle et la profondeur des recherches menées<br>
+                - La complexité du modèle retenu<br>
+                - La qualité et la clarté de votre texte explicatif<br>
+                - La clarté et l'efficacité de votre code R permettant de créer le modèle que vous avez finalement retenu<br>
+                - La précision de vos prédictions se fera au moyen de la métrique  "somme des carrés des résidus". Un classement des meilleurs prédictions sera effectué<br>
+            </p> 
+
+            <h3>Les compétences acquises</h3>
+            <p>
+                - l'application des quatre modèles de régression simple<br>
+                - l'application des modèles sur Excel et sur R<br>
+                - Expliquer sa démarche<br>
+            </p>
+
+            <h3>Le bilan personnel</h3>
+            <p>
+                Ce projet m'a offert l'occasion de renforcer mes compétences en utilisant R. De plus, j'ai pu mettre en pratique l'application 
+                d'un modèle linéaire sur un cas concret. Il m'a également permis de perfectionner mes capacités rédactionnelles et d'exprimer 
+                clairement ma démarche et mes réflexions. En outre, ce projet était une sorte de mini-compétition au sein de la promotion où le 
+                but était d'obtenir la plus faible somme des carrés des résidus (SR²) pour gagner, et c'est mon binôme qui a réussi à obtenir le 
+                score le plus bas.
+            </p>
+
+            <a href="../../assets/projet/but1/Regression.pdf" alt="rapport sur nos prédictions" >Voir le rapport</a>
+            <a href="../../assets/projet/but1/prediction.R" alt="tableau de bord panNote" >Voir le code R</a>
+
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <ul class="list">
+                <li><a href="../../index.html">Accueil</a></li>
+                <li><a href="../../projets.html">Projets</a></li>
+                <li><a href="../../about.html">A propos de moi</a></li>
+            </ul>
+    
+            <div class="social">   
+                <a href="https://www.instagram.com/c.decoust27/">
+                    <img class="social-icon" src="../../assets/photo/insta.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61554652330017">
+                    <img class="social-icon" src="../../assets/photo/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/chloe-decoust-333207294">
+                    <img class="social-icon" src="../../assets/photo/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    
+        <div class="copyright">
+            &copy; 2025 Chloé Découst.
+        </div>
+    </footer>
+</body>
+</html>

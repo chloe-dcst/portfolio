@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application VBA</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <header class="header">
+         <a href="#" class="logo" >Portfolio</a>
+
+        <nav class="navbar">
+            <a href="../../index.html">Accueil</a>
+            <a href="../../projets.html">Projets</a>
+            <a href="../../about.html">À propos de moi</a>
+        </nav>
+
+    </header>
+
+    <section class="projets">
+        <div class="projet-content">
+            <a href="../../projets.html" alt="page projet" class="retour">Retour</a>
+
+            <h1>Conception d'une application en VBA</h1>
+            
+            <div class="description">
+                <div class="bulle-content">
+                    <span class="bulle">VBA</span>
+                    <span class="bulle">Excel</span>
+                </div>
+                <div class="texte-content">
+                    <span class="texte">durée : 10 semaines | groupe : 2 personnes</span>
+                </div>
+
+            </div>
+            <img src="../../assets/photo/VBAfoot.png" alt="L'application VBA" class="project-image">
+
+            <h2>L'objectif</h2>
+            <p> Élaborer une application en VBA pour gérer la sélection des candidats en section sportive de football.
+                L'objectif est de pouvoir proposer la saisie des performances des candidats à chaque fin d'atelier de tests, le jour de la sélection. L'attribution des notes doit être automatique en fonction des performances et des barèmes établis (voir le sujet en bas de la page).
+                Le responsable de recrutement nous a aussi demandé d'établir un classement des candidats à l'issue de la journée de tests. 
+                <br>
+                Pour ouvrir l'application il faut aussi ouvrir le fichier source.
+            </p>
+
+            <h3>La description du projet</h3>
+    
+            <p>
+                Tout d'abord, sur un fichier Excel indépendant, nous retrouvions la liste des candidats avec leurs informations personnelles ainsi qu'une autre feuille avec les barèmes.
+                <br>
+                La première étape dans la construction de cette application a été de faire la répartition des joueurs en fonction de leur année de naissance. Lorsque l'on clique sur le bouton "Répartition des joueurs", une nouvelle feuille de calcul est créée avec la répartition des joueurs" sur la page d'accueil, cela rempli
+                automatiquement 3 feuilles : "RésultatsGardiens" , "RésultatsJoueurs07-08" et "RésultatsJoueurs09-10". Dans ces feuilles, on retrouve des informations sur l'identité du candidat (nom, prénom, club, année de naissance, poste) mais aussi ses résultats aux tests ainsi que ses notes attribuées. Pour ce faire, nous avons créé une macro qui récupère les informations personnelles sur le fichier Excel indépendant puis 
+                nous avons écrit une fonction que l'on utilise comme une fonction Excel pour le calcul des notes en fonction des barèmes et des tests. De plus, le nom et prénom des joueurs est un lien, si on clique sur un nom, une fenêtre pop-up s'ouvre et apparait une fiche individuelle qui reprend toutes les informations présentes sur la feuille ainsi que le nombre total de points et le rang dans le classement.
+                <br>
+                La deuxième partie sert à générer le classement. On retrouve sur la page d'accueil un deuxième bouton "Générer les classements", il nous permet d'accéder directement à la feuille "Classementfinal" et elle contient le classement par groupe (gardien, 2007-2008 et 2099-2010) en fonction du nombre total de points obtenus à la fin de la journée. 
+                <br>
+                Et enfin la troisième partie mais peut - être la plus importante, c'est le tableau de bord. Sur la page d'accueil nous retronvons un dernier bouton "Tableau de bord", il nous emmène sur la feuille "TableauBord". Sur cette nouvelle feuille nous allons retrouver un comparatif, il faut sélectionner une catégorie puis  2 joueurs et cliquer sur le bouton "Voir le comparatif". Cela créer une nouvelle feuille, elle a pour nom le nom de famille des 2 joueurs (nom1_nom2). elle est composée d'un tableau qui reprend les notes de chaque joueur,
+                un graphique radar qui permet de visualiser plus facilement la différence entre leurs notes. On retrouvera aussi 2 graphiques barres qui permettent encore une fois de comparer leurs notes. De retour sur le tableau de bord, à côté de la partie comparatif, il y a une liste des clubs des candidats. Quand on clique sur le bouton "Voir les statistiques du club", après avoir choisi un club, cela créer une nouvelle feuille avec le nom du club. Cette feuille contient exactement la même chose que dans les feuilles résultats 
+                de la première partie mais pour les joueurs qui proviennent du club sélectionné. 
+                Enfin sur la feuille tableau de bord, il y a 2 tableaux, un premier qui permet de faire le point sur les effectifs par catégorie et sur les informations personnelles et le second tableau rassemblent les moyennes de chaque catégorie à chaque test. A côté de ses 2 tableaux, il y a un graphique circulaire qui reprend les informations du premier tableau de cette feuille et qui est modulable avec les deux listes.
+                <br>
+                Pour finir, nous avons une feuille "Cartographie" qui permet de visualiser l'origine des joueurs à l'aide d'une carte où il est possible de filtrer sur les régions.
+            </p> 
+
+            <h3>L'évaluation</h3>
+            <p>
+                - la fonctionnalité de l'application<br>
+                - l'optimisation, les bonnes pratiques et les commentaires du code<br>
+                - le niveau d'exigence des fonctionnalités <br>
+                - le tableau de bord (les statistiques choisies, les graphiques, ...)<br>
+                - l'amélioration de l'ergonomie des feuilles de calculs (protection des cellules, paramétrage pour les années suivantes, ...)<br>
+                - les propositions supplémentaires, la créativité et la pertinence des choix<br>
+            </p>
+
+            <h3>Les compétences acquises</h3>
+            <p>
+               - l'utilisation et l'approfondissement de VBA<br>
+               - la création d'un tableau de bord dynamique <br>
+               - la liaison entre VBA et les éléments d'Excel (graphiques)<br>
+               - l'automatisation et l'optimisation avec un découpage du code en un maximum de procédures et de fonctions réutilisables <br>
+               - le respect du cahier des charges : les barèmes <br>
+               
+               
+            </p>
+
+            <h3>Le bilan personnel</h3>
+            <p>
+                Ce projet a été long mais vraiment très enrichissant. J'ai mis en pratique tout ce que nous avons pu voir en cours sur le langage VBA : la construction de user form, l'utilisation d'objet (bouton, liste, ...), la création et l'utilisation de fonction dans Excel,
+                la réalisation de graphique dynamique ainsi que de faire des liens entre les différentes feuilles de calculs, fichiers Excel et divers éléments. Ce projet m'a vraiment permis de progresser dans l'utilisation de ce langage.
+            </p>
+
+            <a href="../../assets/projet/but2/Projet_VBA_valentin_chloé/Analyse.xlsm" alt="l'application" >Voir l'application</a>
+            <a href="../../assets/projet/but2/Projet_VBA_valentin_chloé/ProjetSectionSportive.xlsm" alt="le fichier source" >Le fichier source</a>
+            <a href="../../assets/projet/but2/Projet_VBA_valentin_chloé/Sujet.pdf" alt="le sujet" >Voir le sujet</a>
+          
+        </div> 
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <ul class="list">
+                <li><a href="../../index.html">Accueil</a></li>
+                <li><a href="../../projets.html">Projets</a></li>
+                <li><a href="../../about.html">A propos de moi</a></li>
+            </ul>
+    
+            <div class="social">   
+                <a href="https://www.instagram.com/c.decoust27/">
+                    <img class="social-icon" src="../../assets/photo/insta.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61554652330017">
+                    <img class="social-icon" src="../../assets/photo/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/chloe-decoust-333207294">
+                    <img class="social-icon" src="../../assets/photo/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    
+        <div class="copyright">
+            &copy; 2025 Chloé Découst.
+        </div>
+    </footer>
+</body>
+</html>

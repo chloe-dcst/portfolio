@@ -140,6 +140,10 @@ span{
     
 }
 
+.btn-1:visited {
+    color: #a8dadc; /* Force le bleu clair même après le clic */
+}
+
 .btn-1:hover {
     background-color: #a8dadc;
     color: #003366;

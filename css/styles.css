@@ -136,8 +136,9 @@ span{
     font-weight: 600;
     transition: 0.3s ease;
     cursor: pointer;
-    display: inline-block;
-    
+    display: inline-flex;
+    text-decoration: none;
+    margin-bottom: 30px;  
 }
 
 .btn-1:visited {

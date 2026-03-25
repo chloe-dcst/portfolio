@@ -401,7 +401,7 @@ section.work a.retour:active{
 .serieTemp a:hover h3,
 .VBAfoot a:hover h3,
 .airbnb a:hover h3,
-.portfolio2 a:hover h3 
+.portfolio2 a:hover h3, 
 .App_dash a:hover h3{
     color: #003366; /* Couleur foncée sur fond clair */
 }

@@ -102,18 +102,23 @@ span{
 }
 
 .home-content h3 {
-    font-size: 36px; /* Taille réduite pour plus d'équilibre */
+    font-size: 34px; /* Taille réduite pour plus d'équilibre */
+    margin-bottom: 10px; /* Un peu d'espace sous "Salut !" */
+}
+
+.home-content h4 {
+    font-size: 22px; /* Taille réduite pour plus d'équilibre */
     margin-bottom: 10px; /* Un peu d'espace sous "Salut !" */
 }
 
 .home-content h1 {
-    font-size: 50px; /* Taille un peu réduite */
+    font-size: 40px; /* Taille un peu réduite */
     line-height: 1.2;
     margin-bottom: 20px; /* Un peu d'espace sous le titre */
 }
 
 .home-content p {
-    font-size: 20px; /* Taille plus cohérente avec le reste du texte */
+    font-size: 18px; /* Taille plus cohérente avec le reste du texte */
     margin: 20px 0;
     line-height: 1.6;
 }

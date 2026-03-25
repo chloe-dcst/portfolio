@@ -302,11 +302,12 @@ section.work a.retour:active{
     border: 3px solid #003366;
     border-radius: 10px;
     box-shadow: 0 0 10px #a8dadc;
+    margin-top: 15px;
 }
 
 .cv-page a {
-     font-size: 16px;
-    color: black;
+    font-size: 16px;
+    color: #a8dadc;
     font-weight: 500;
     margin: 0 20px;
     border-bottom: 10px solid transparent;

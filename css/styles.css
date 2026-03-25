@@ -91,29 +91,34 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3em; /* Espacement réduit entre les éléments */
+    gap: 4em; /* Espacement réduit entre les éléments */
     padding: 0 15px; /* On enlève les 12% de padding sur les côtés pour plus de réactivité */
-    text-align: center;
+    text-align: center
 }
 
 .home-content {
     max-width: 800px;
-    /* margin-top: 50px; suppression, on n'a plus besoin de cet espace supplémentaire */
+    margin-top: 50px   ;
 }
 
 .home-content h3 {
-    font-size: 36px; /* Taille réduite pour plus d'équilibre */
+    font-size: 34px; /* Taille réduite pour plus d'équilibre */
+    margin-bottom: 10px; /* Un peu d'espace sous "Salut !" */
+}
+
+.home-content h4 {
+    font-size: 22px; /* Taille réduite pour plus d'équilibre */
     margin-bottom: 10px; /* Un peu d'espace sous "Salut !" */
 }
 
 .home-content h1 {
-    font-size: 50px; /* Taille un peu réduite */
+    font-size: 40px; /* Taille un peu réduite */
     line-height: 1.2;
     margin-bottom: 20px; /* Un peu d'espace sous le titre */
 }
 
 .home-content p {
-    font-size: 20px; /* Taille plus cohérente avec le reste du texte */
+    font-size: 18px; /* Taille plus cohérente avec le reste du texte */
     margin: 20px 0;
     line-height: 1.6;
 }
@@ -302,11 +307,12 @@ section.work a.retour:active{
     border: 3px solid #003366;
     border-radius: 10px;
     box-shadow: 0 0 10px #a8dadc;
+    margin-top: 15px;
 }
 
 .cv-page a {
-     font-size: 16px;
-    color: black;
+    font-size: 16px;
+    color: #a8dadc;
     font-weight: 500;
     margin: 0 20px;
     border-bottom: 10px solid transparent;
@@ -322,7 +328,7 @@ section.work a.retour:active{
 
 
 .enquete, .panNote, .gestionFichier, .martinique, .islande, .regression, .bdr, .echantillonnage, .dataviz, .indicateur, .grosseSAE, .portfolio
-, .ordiginal, .serieTemp, .VBAfoot, .airbnb, .portfolio2{
+, .ordiginal, .serieTemp, .VBAfoot, .airbnb, .portfolio2, .App_dash{
     position: relative;
     width: 350px;
     height: 250px;
@@ -338,7 +344,7 @@ section.work a.retour:active{
 
 
 .enquete img, .panNote img, .gestionFichier img, .martinique img, .islande img, .regression img, .bdr img, .echantillonnage img, .dataviz img,
-.indicateur img, .portfolio img, .ordiginal img, .serieTemp img, .VBAfoot img, .airbnb img, .portfolio2 img{
+.indicateur img, .portfolio img, .ordiginal img, .serieTemp img, .VBAfoot img, .airbnb img, .portfolio2 img, .App_dash img{
     width: 350px;
     height: 250px;
     object-fit: cover;
@@ -354,7 +360,7 @@ section.work a.retour:active{
 }
 
 .enquete a, .panNote a, .gestionFichier a, .martinique a, .islande a, .regression a, .bdr a, .echantillonnage a, .dataviz a, .indicateur a, 
-.grosseSAE a, .portfolio a, .ordiginal a, .serieTemp a, .VBAfoot a, .airbnb a, .portfolio2 a {
+.grosseSAE a, .portfolio a, .ordiginal a, .serieTemp a, .VBAfoot a, .airbnb a, .portfolio2 a , .App_dash a{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -367,7 +373,7 @@ section.work a.retour:active{
 }
 
 .panNote h3, .martinique h3, .enquete h3, .gestionFichier h3, .islande h3, .regression h3, .bdr h3, .echantillonnage h3, .dataviz h3, 
-.indicateur h3, .grosseSAE h3, .portfolio h3, .ordiginal h3, .serieTemp h3,.VBAfoot h3, .airbnb h3, .portfolio2 h3 {
+.indicateur h3, .grosseSAE h3, .portfolio h3, .ordiginal h3, .serieTemp h3,.VBAfoot h3, .airbnb h3, .portfolio2 h3 , .App_dash h3{
     font-size: 14px;
     margin-bottom: 10px;
     text-align: center; 
@@ -376,7 +382,7 @@ section.work a.retour:active{
 
 .enquete a:hover, .panNote a:hover, .gestionFichier a:hover, .martinique a:hover, .islande a:hover, .regression a:hover, .bdr a:hover, 
 .echantillonnage a:hover, .dataviz a:hover, .indicateur a:hover, .grosseSAE a:hover, .portfolio a:hover
-, .ordiginal a:hover, .serieTemp a:hover, .VBAfoot a:hover, .airbnb a:hover, .portfolio2 a:hover {
+, .ordiginal a:hover, .serieTemp a:hover, .VBAfoot a:hover, .airbnb a:hover, .portfolio2 a:hover, .App_dash a:hover{
     text-decoration: none;
     transform: scale(1.02);  
     color: #003366;
@@ -401,7 +407,8 @@ section.work a.retour:active{
 .serieTemp a:hover h3,
 .VBAfoot a:hover h3,
 .airbnb a:hover h3,
-.portfolio2 a:hover h3 {
+.portfolio2 a:hover h3, 
+.App_dash a:hover h3{
     color: #003366; /* Couleur foncée sur fond clair */
 }
 

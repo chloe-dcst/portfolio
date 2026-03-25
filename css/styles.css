@@ -91,14 +91,14 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3em; /* Espacement réduit entre les éléments */
+    gap: 4em; /* Espacement réduit entre les éléments */
     padding: 0 15px; /* On enlève les 12% de padding sur les côtés pour plus de réactivité */
-    text-align: center;
+    text-align: center
 }
 
 .home-content {
     max-width: 800px;
-    /* margin-top: 50px; suppression, on n'a plus besoin de cet espace supplémentaire */
+    margin-top: 50px   ;
 }
 
 .home-content h3 {

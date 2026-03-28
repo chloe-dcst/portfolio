@@ -214,6 +214,7 @@ span{
 
 .btn-but{
     padding: 15px 28px;
+    white-space: nowrap; /* fixe le texte surune ligne */
     background-color: #003366;
     color: #a8dadc;
     border: 2px solid transparent;

@@ -38,36 +38,45 @@
             <img src="../../assets/photo/annotateur.png" alt="Le site web" class="project-image">
 
             <h2>L'objectif</h2>
-                <p> À partir d'un début d'application, nous devions corriger les bugs et ajouter de nouvelles fonctionnalités</p>
+                <p> À partir d'un projet template, nous devions corriger les bugs et ajouter de nouvelles fonctionnalités</p>
 
             <h3>La description du projet</h3>
 
-            <p>Cette application consiste à pouvoir annoter des images de voitures afin d'identifier précisément où se situe le véhicule sur l'image. Pour réaliser cette application, nous devions utiliser le framework Python Dash. Notre application possède différentes pages : <br>
-                    - La première page permet d'annoter les images. En haut à droite, nous avons la possibilité de choisir l'image que l'on souhaite annoter (soit directement via une liste déroulante, soit avec les boutons "Suivant" et "Précédent"). Ensuite, nous avons la possibilité de mettre une étiquette (un nom) à l'annotation. Enfin, l'utilisateur peut voir les annotations faites par d'autres utilisateurs grâce au curseur.<br>
-                    - La deuxième page contient les statistiques. Nous pouvons filtrer par utilisateurs et par dates. En dessous, nous retrouvons différents indicateurs ("Images totales", "Images annotées", "Total d'annotations" et "Annotateurs"), suivis de trois graphiques ("Annotations par personne", "Top images", "IoU moyen par image")<br>
-                    - La troisième page correspond au contrôle qualité des annotations. Notre contrôle qualité utilise la méthode de l'IoU (Intersection over Union), soit le chevauchement. Cette technique permet de calculer à quel point deux boîtes englobantes se recouvrent l’une l’autre : plus l'IoU est élevé, plus la qualité est bonne. À l'inverse, quand un IoU est faible, cela peut révéler une erreur d'annotation ; par conséquent, nous retournons le nom de l'utilisateur qui aurait fait une mauvaise annotation.<br>
-                    - La quatrième page est l'historique. Elle permet de voir les dernières connexions, annotations et suppressions d'annotations.
-                </p>
+            <p>Application permettant d'intéroger l'API Spotify pour découvrir de la musique en fonction des préférences utilisateur : <br>
+                - Authentification utilisateur avec Spotify <br>
+                - Affichage des titres, artistes et playlists favoris <br>
+               Après avoir récupérer le template et initialisé notre projet, nous avions différentes tâches à faire classées par priorité,
+                étiquette (feature, bug, ...) et taille estimée (petite, moyenne, grande) permettant d'évaluer le temps nécessaire pour compléter la tâche.
+                Voici la liste des tâche que nous devions réaliser : <br>
+                    - Correction du bug d'index dans l'affichage des tops artistes (P0, XS, bug). <br>
+                    - Correction du bug d'affichage du nombre de playlist dans la page Playlist (P0, S, bug). <br>
+                    - Ajout d'un service permettant de compter le nombre d'apparitions d'un artiste dans une Playlist Spotify (P1, L, feature). <br>
+                    - Ajout de la page de détail de la Playlist (P1, L, feature). <br>
+                    - Ajout de la page de tableau de bord (P1, XL, feature). <br>
+                Pour chaque tâche du projet, nous devions mettre en place des tests unitaires pour garantir la qualité de notre code. 
+            </p>
         
             <h3>L'évaluation</h3>
             <p>
-                - Présentation de l'outil développé<br>
-                - Qualité des commentaires et de la présentation <br>
-                - utilisation de la technologie Dash<br>
-                - Créativité dans la recherche d'une nouvelle idée (le contrôle qualité) <br>
+                - Nombre de tâches réalisées<br>
+                - Qualité et maintenabilité du code <br>
+                - Maîtrise de GitHub (Branches, Pull Request, ...) <br>
+                - Respect du cahier des charges et des consignes <br>
             </p>
 
             <h3>Les compétences acquises</h3>
             <p>
-                - Apprendre à utiliser la technologie Dash<br>
+                - Organiser un projet : arboresce et GitHub<br>
+                - Faire des tests unitaires pour contrôler la qualité du programme <br>
             </p>
 
             <h3>Le bilan personnel</h3>
             <p>
-                Ce projet m'a permis de découvrir la technologie Dash pour créer une application web.
+                Ce projet m'a permis de découvrir la gestion de projet par l'intermédiaire de l'outil GitHub. Cet outil est très intéressant pour réaliser nos projets, car il nous permet de sécuriser la partie de nos applications qui fonctionne parfaitement et de travailler sur une autre branche afin de ne pas "casser" ce qui fonctionne déjà.
+                GitHub est aussi très pratique pour le travail en équipe : chaque membre du groupe peut travailler sur sa partie sans gêner les autres collaborateurs.
             </p>
 
-            <a href="../../assets/projet/but3/App_Annotation.zip" alt="l'application" >Voir l'application</a>          
+            <a href="https://github.com/chloe-dcst/music-discovery-app.git" alt="l'application GitHub" >Voir l'application</a>          
         </div> 
     </section>
 

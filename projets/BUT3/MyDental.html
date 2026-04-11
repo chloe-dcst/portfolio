@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refonte de l’Application MYDental </title>
+    <title>Refonte de l'Application MYDental </title>
     <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
         <div class="projet-content">
             <a href="../../projets.html" alt="page projet" class="retour">Retour</a>
 
-            <h1>Refonte de l’Application MYDental </h1>
+            <h1>Refonte de l'Application MYDental </h1>
             
             <div class="description">
                 <div class="bulle-content">
@@ -38,15 +38,15 @@
             <img src="../../assets/photo/MyDental.png" alt="Le site web" class="project-image">
 
             <h2>L'objectif</h2>
-                <p> Repense entièrement l'application MyDental : analyse et correction des indicateurs existants, ajout d'un simulateur permettant de calculer la rentabilité et proposition d'indicateurs complémentaires. </p>
+                <p> Repenser entièrement l'application MyDental : analyse et correction des indicateurs existants, ajout d'un simulateur permettant de calculer la rentabilité et proposition d'indicateurs complémentaires. </p>
 
             <h3>La description du projet</h3>
 
-            <p>Cette application consiste à pouvoir annoter des images de voitures afin d'identifier précisément où se situe le véhicule sur l'image. Pour réaliser cette application, nous devions utiliser le framework Python Dash. Notre application possède différentes pages : <br>
-                    - La première page permet d'annoter les images. En haut à droite, nous avons la possibilité de choisir l'image que l'on souhaite annoter (soit directement via une liste déroulante, soit avec les boutons "Suivant" et "Précédent"). Ensuite, nous avons la possibilité de mettre une étiquette (un nom) à l'annotation. Enfin, l'utilisateur peut voir les annotations faites par d'autres utilisateurs grâce au curseur.<br>
-                    - La deuxième page contient les statistiques. Nous pouvons filtrer par utilisateurs et par dates. En dessous, nous retrouvons différents indicateurs ("Images totales", "Images annotées", "Total d'annotations" et "Annotateurs"), suivis de trois graphiques ("Annotations par personne", "Top images", "IoU moyen par image")<br>
-                    - La troisième page correspond au contrôle qualité des annotations. Notre contrôle qualité utilise la méthode de l'IoU (Intersection over Union), soit le chevauchement. Cette technique permet de calculer à quel point deux boîtes englobantes se recouvrent l’une l’autre : plus l'IoU est élevé, plus la qualité est bonne. À l'inverse, quand un IoU est faible, cela peut révéler une erreur d'annotation ; par conséquent, nous retournons le nom de l'utilisateur qui aurait fait une mauvaise annotation.<br>
-                    - La quatrième page est l'historique. Elle permet de voir les dernières connexions, annotations et suppressions d'annotations.
+            <p>À partir d'une application déjà existante, nous devions corriger les éventuels bugs présents sur le site, puis ajouter de nouveaux indicateurs jugés pertinents pour aider à la gestion du cabinet dentaire. Enfin, nous devions ajouter une nouvelle fonctionnalité : un simulateur de rentabilité. Cette fonctionnalité a pour objectif d'estimer la rentabilité d'un acte pratiqué par un praticien en fonction du coût de l'acte et de la rémunération du médecin.
+
+            Pour être organisés et faciliter le travail de groupe, nous utilisions GitHub. Ainsi, chacun pouvait travailler sur sa branche de son côté, puis fusionner (merger) son travail sur la branche finale une fois la fonctionnalité prête. Pour être les plus efficaces possible, nous nous sommes réparti les tâches : une personne sur la correction des bugs, une autre sur la création des indicateurs et les deux dernières sur le simulateur de rentabilité. Nous avons choisi de mettre deux personnes sur cette dernière tâche, jugée plus complexe. Cependant, comme nous avions fini assez vite, l'un de nous a aidé à la résolution des bugs et l'autre a participé à la création des nouveaux indicateurs.
+
+            Personnellement, j'ai fait partie du binôme pour la création du simulateur. Nous avons rencontré un problème principal : la base de données à notre disposition ne contenait pas de tables pour les coûts ni pour le salaire des médecins. Nous avons donc dû simuler ces données.
              </p>
         
             <h3>L'évaluation</h3>
@@ -67,7 +67,7 @@
                 Ce projet m'a permis de découvrir la technologie Dash pour créer une application web.
             </p>
 
-            <a href="../../assets/projet/but3/App_Annotation.zip" alt="l'application" >Voir l'application</a>          
+            <a href="https://github.com/Xavier-Bar/MYDental.git" alt="l'application" >Voir l'application</a>          
         </div> 
     </section>
 

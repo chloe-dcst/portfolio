@@ -412,7 +412,7 @@ section.work a.retour:active{
 .airbnb a:hover h3,
 .portfolio2 a:hover h3, 
 .App_dash a:hover h3,
-.MusicApp a:hover h3
+.MusicApp a:hover h3,
 .Mydental a:hover h3{
     color: #003366; /* Couleur foncée sur fond clair */
 }

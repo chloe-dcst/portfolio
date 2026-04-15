@@ -329,7 +329,7 @@ section.work a.retour:active{
 
 
 .enquete, .panNote, .gestionFichier, .martinique, .islande, .regression, .bdr, .echantillonnage, .dataviz, .indicateur, .grosseSAE, .portfolio
-, .ordiginal, .serieTemp, .VBAfoot, .airbnb, .portfolio2, .App_dash, .MusicApp, .Mydental{
+, .ordiginal, .serieTemp, .VBAfoot, .airbnb, .portfolio2, .App_dash, .MusicApp, .Mydental, .MangoDB{
     position: relative;
     width: 350px;
     height: 250px;
@@ -346,7 +346,7 @@ section.work a.retour:active{
 
 .enquete img, .panNote img, .gestionFichier img, .martinique img, .islande img, .regression img, .bdr img, .echantillonnage img, .dataviz img,
 .indicateur img, .portfolio img, .ordiginal img, .serieTemp img, .VBAfoot img, .airbnb img, .portfolio2 img, .App_dash img, .MusicApp img, 
-.Mydental img{
+.Mydental img, .MangoDB img{
     width: 350px;
     height: 250px;
     object-fit: cover;
@@ -362,7 +362,8 @@ section.work a.retour:active{
 }
 
 .enquete a, .panNote a, .gestionFichier a, .martinique a, .islande a, .regression a, .bdr a, .echantillonnage a, .dataviz a, .indicateur a, 
-.grosseSAE a, .portfolio a, .ordiginal a, .serieTemp a, .VBAfoot a, .airbnb a, .portfolio2 a , .App_dash a, .MusicApp a, .Mydental a{
+.grosseSAE a, .portfolio a, .ordiginal a, .serieTemp a, .VBAfoot a, .airbnb a, .portfolio2 a , .App_dash a, .MusicApp a, .Mydental a,
+.MangoDB a{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -376,7 +377,7 @@ section.work a.retour:active{
 
 .panNote h3, .martinique h3, .enquete h3, .gestionFichier h3, .islande h3, .regression h3, .bdr h3, .echantillonnage h3, .dataviz h3, 
 .indicateur h3, .grosseSAE h3, .portfolio h3, .ordiginal h3, .serieTemp h3,.VBAfoot h3, .airbnb h3, .portfolio2 h3 , .App_dash h3,
-.MusicApp h3, .Mydental h3{
+.MusicApp h3, .Mydental h3, .MangoDB h3{
     font-size: 14px;
     margin-bottom: 10px;
     text-align: center; 
@@ -385,7 +386,7 @@ section.work a.retour:active{
 
 .enquete a:hover, .panNote a:hover, .gestionFichier a:hover, .martinique a:hover, .islande a:hover, .regression a:hover, .bdr a:hover, 
 .echantillonnage a:hover, .dataviz a:hover, .indicateur a:hover, .grosseSAE a:hover, .portfolio a:hover, .ordiginal a:hover, .serieTemp a:hover, 
-.VBAfoot a:hover, .airbnb a:hover, .portfolio2 a:hover, .App_dash a:hover, .MusicApp a:hover, .Mydental a:hover{
+.VBAfoot a:hover, .airbnb a:hover, .portfolio2 a:hover, .App_dash a:hover, .MusicApp a:hover, .Mydental a:hover, .MangoDB a:hover{
     text-decoration: none;
     transform: scale(1.02);  
     color: #003366;
@@ -413,7 +414,8 @@ section.work a.retour:active{
 .portfolio2 a:hover h3, 
 .App_dash a:hover h3,
 .MusicApp a:hover h3,
-.Mydental a:hover h3{
+.Mydental a:hover h3,
+.MangoDB a:hover h3{
     color: #003366; /* Couleur foncée sur fond clair */
 }
 

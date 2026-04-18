@@ -43,25 +43,35 @@
             <h3>La description du projet</h3>
 
             <p>
-
+            Nous avions, à notre disposition, une base de données relationnelle sqlite sur les transports urbains de Paris et le but était de migrer cette base de données vers un environnement NoSQL (MongoDB)
+            afin de mieux gérer les flux en temps réel, des données semi-structurées (capteur), et une visualisation géographique dynamique. <br>
+            Avant d'effectuer la migration, nous avons écrit une dizaine de requêtes SQL de test à partir de la base de données de base. 
+            Ensuite, nous avons réfléchi à la construction de la base de données NoSQL, le nombre de collections et ce qu'elles vont contenir. Nous avons finalement choisi de faire 3 collections : <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - arrêt : contient tout ce qui se rapporte aux arrêts, quartiers, capteurs et mesures. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ligne : prend en compte les données qui se rapprochent des lignes, du trafic et des incidents. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - véhicule : ensemble des données liées aux véhicules, chauffeurs et horraires. <br>
+            Après la migration, nous avons réécrit les requêtes de la première partie mais en mongoDB pour s'assurer que notre base de données NoSQL est correcte. 
+            Pour finir ce projet, nous avons dû créer des indicateurs, des graphiques et des cartes, sur une application streamlit afin de produire un tableau de bord intéractif.
             </p>
         
             <h3>L'évaluation</h3>
             <p>
-                - Présentation de l'outil développé<br>
-                - Qualité des commentaires et de la présentation <br>
-                - utilisation de la technologie Dash<br>
-                - Créativité dans la recherche d'une nouvelle idée (le contrôle qualité) <br>
+                - Qualité du code <br>
+                - Qualité des commentaires <br>
+                - Qualité des résultats : les résultats devaient être les mêmes pour les requêtes écrites en SQL et en MongoDB<br>
+                - Respect du cahier des charges <br>
             </p>
 
             <h3>Les compétences acquises</h3>
             <p>
-                - Apprendre à utiliser la technologie Dash<br>
+                - Apprendre à migrer une base de données relationnelles vers une base de données NoSQL<br>
+                - Écrire des requêtes en MangoDB <br>
+                - Approfondir l'utilisation du framework streamlit pour créer une application<br>
             </p>
 
             <h3>Le bilan personnel</h3>
             <p>
-                Ce projet m'a permis de découvrir la technologie Dash pour créer une application web.
+                Ce projet m'a permis de découvrir ce qu'est une base de données NoSQL et comment on peut requêter dessus en MongoDB. Il m'a aussi permis d'apprendre à faire une migration de base de données et de comprendre la différence entre une base de données relationnelle et NoSQL. 
             </p>
 
             <a href="https://github.com/Xavier-Bar/SAE_MongoDB.git" alt="lien github" >Voir l'application (GitHub)</a>          

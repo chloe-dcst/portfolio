@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet perceptron</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <header class="header">
+         <a href="#" class="logo" >Portfolio</a>
+
+        <nav class="navbar">
+            <a href="../../index.html">Accueil</a>
+            <a href="../../projets.html">Projets</a>
+            <a href="../../about.html">À propos de moi</a>
+        </nav>
+
+    </header>
+
+    <section class="projets">
+        <div class="projet-content">
+            <a href="../../projets.html" alt="page projet" class="retour">Retour</a>
+
+            <h1>Projet perceptron</h1>
+            
+            <div class="description">
+                <div class="bulle-content">
+                    <span class="bulle">python</span>
+                    <span class="bulle">Word</span>
+                </div>
+                <div class="texte-content">
+                    <span class="texte">durée : 20H | groupe : 2 personnes</span>
+                </div>
+
+            </div>
+            <img src="../../assets/photo/LLM.png" alt="Le site web" class="project-image">
+
+            <h2>L'objectif</h2>
+                <p> L'objectif de ce projet est de réaliser un système de dicrimination d'images réelles, soit un dispositif de classification. </p>
+
+            <h3>La description du projet</h3>
+
+            <p>
+               À notre disposition, nous avions la base de données Wang, composée de 1 000 images réelles réparties en 10 catégories (Jungle, Plage, Monuments, Bus, Dinosaures, Éléphants, Fleurs, Chevaux, Montagne et Plats). L’objectif était de concevoir un système capable d’attribuer automatiquement la bonne classe à une image inconnue.<br>
+                Pour ce projet, nous avons implémenté deux approches distinctes sous Keras et TensorFlow : <br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Approche par Perceptron Multi-couches (MLP) : Ma mission a consisté à mettre en place un système de discrimination basé sur des descripteurs d'images. 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Après la création d'un vecteur de labels, j'ai conçu un modèle séquentiel à 4 couches. Pour optimiser les performances, j'ai ajusté les hyperparamètres 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(normalisation, Dropout et régularisation L2) afin de limiter le surapprentissage. L'analyse des résultats s'est appuyée sur l'étude des courbes d'accuracy et des 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matrices de confusion. <br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Approche par Réseau de Neurones Convolutifs (CNN) : En parallèle, ma binôme a développé une stratégie "Deep" où le modèle extrait lui-même les 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caractéristiques des images via des couches de convolution et de pooling. Nous avons également exploré le Transfer Learning avec le modèle VGG16 pour 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gagner en stabilité et en précision. <br>
+
+                Pour rendre compte de nos résultats, nous avons rédigé un rapport détaillé décrivant chaque étape du projet, ainsi qu'une analyse critique des pistes d'amélioration pour que nos modèles soient plus performant.
+            <h3>L'évaluation</h3>
+            <p>
+                - Qualité de la démarche <br>
+                - Qualité de la restitution : l'analyse de nos résultats <br>
+            </p>
+
+            <h3>Les compétences acquises</h3>
+            <p>
+                - Apprendre à créer un modèle de classification d'image<br>
+                - Apprendre à analyser ses résultats pour les améliorer <br>
+            </p>
+
+            <h3>Le bilan personnel</h3>
+            <p>
+                Ce projet m'a permis de commencer à comprendre comment fonctionne un modèle de classification et plus précisément de type réseau de neurones. De plus, il m'a permis de comprendre l'importance d'analyser les résultats afin d'améliorer le modèle pour une meilleure performance.
+            </p>
+
+            <a href="../../assets/projet/but3/rapport-RN.pdf" alt="lien rapport" >Voir le rapport</a>          
+        </div> 
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <ul class="list">
+                <li><a href="../../index.html">Accueil</a></li>
+                <li><a href="../../projets.html">Projets</a></li>
+                <li><a href="../../about.html">A propos de moi</a></li>
+            </ul>
+    
+            <div class="social">   
+                <a href="https://www.instagram.com/c.decoust27/">
+                    <img class="social-icon" src="../../assets/photo/insta.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61554652330017">
+                    <img class="social-icon" src="../../assets/photo/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/chloe-decoust-333207294">
+                    <img class="social-icon" src="../../assets/photo/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    
+        <div class="copyright">
+            &copy; 2026 Chloé Découst.
+        </div>
+    </footer>
+</body>
+</html>

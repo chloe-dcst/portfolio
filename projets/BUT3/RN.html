@@ -22,59 +22,57 @@
         <div class="projet-content">
             <a href="../../projets.html" alt="page projet" class="retour">Retour</a>
 
-            <h1>Migration de données vers un environnement NoSQL</h1>
+            <h1>Projet perceptron</h1>
             
             <div class="description">
                 <div class="bulle-content">
-                    <span class="bulle">python/streamlit</span>
-                    <span class="bulle">SQL</span>
-                    <span class="bulle">NoSQL/MongoDB</span>
+                    <span class="bulle">python</span>
+                    <span class="bulle">Word</span>
                 </div>
                 <div class="texte-content">
-                    <span class="texte">durée : 2 semaines | groupe : 2 personnes</span>
+                    <span class="texte">durée : 20H | groupe : 2 personnes</span>
                 </div>
 
             </div>
-            <img src="../../assets/photo/MangoDB.png" alt="Le site web" class="project-image">
+            <img src="../../assets/photo/RN.png" alt="Le site web" class="project-image">
 
             <h2>L'objectif</h2>
-                <p> Réaliser la migration d'une base de données relationnelle vers une base de données NoSQL et l'exploiter. </p>
+                <p> L'objectif de ce projet est de réaliser un système de dicrimination d'images réelles, soit un dispositif de classification. </p>
 
             <h3>La description du projet</h3>
 
             <p>
-            Nous avions, à notre disposition, une base de données relationnelle sqlite sur les transports urbains de Paris. Le but était de migrer cette base de données vers un environnement NoSQL (MongoDB)
-            afin de mieux gérer les flux en temps réel, des données semi-structurées (capteur), et une visualisation géographique dynamique. <br>
-            Avant d'effectuer la migration, nous avons écrit une dizaine de requêtes SQL de test à partir de la base de données de base. 
-            Ensuite, nous avons réfléchi à la construction de la base de données NoSQL, le nombre de collections et ce qu'elles vont contenir. Nous avons finalement choisi de faire 3 collections : <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - arrêt : contient tout ce qui se rapporte aux arrêts, quartiers, capteurs et mesures. <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ligne : prend en compte les données qui se rapprochent des lignes, du trafic et des incidents. <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - véhicule : ensemble des données liées aux véhicules, chauffeurs et horaires. <br>
-            Après la migration, nous avons réécrit les requêtes de la première partie mais en mongoDB pour s'assurer que notre base de données NoSQL est correcte. 
-            Pour finir ce projet, nous avons créé des indicateurs, des graphiques et des cartes sur une application Streamlit afin de produire un tableau de bord interactif.
-            </p>
-        
+               À notre disposition, nous avions la base de données Wang, composée de 1 000 images réelles réparties en 10 catégories (Jungle, Plage, Monuments, Bus, Dinosaures, Éléphants, Fleurs, Chevaux, Montagne et Plats). L’objectif était de concevoir un système capable d’attribuer automatiquement la bonne classe à une image inconnue.<br>
+                Pour ce projet, nous avons implémenté deux approches distinctes sous Keras et TensorFlow : <br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Approche par Perceptron Multi-couches (MLP) : Ma mission a consisté à mettre en place un système de discrimination basé sur des descripteurs d'images. 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Après la création d'un vecteur de labels, j'ai conçu un modèle séquentiel à 4 couches. Pour optimiser les performances, j'ai ajusté les hyperparamètres 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(normalisation, Dropout et régularisation L2) afin de limiter le surapprentissage. L'analyse des résultats s'est appuyée sur l'étude des courbes d'accuracy et des 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matrices de confusion. <br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Approche par Réseau de Neurones Convolutifs (CNN) : En parallèle, ma binôme a développé une stratégie "Deep" où le modèle extrait lui-même les 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caractéristiques des images via des couches de convolution et de pooling. Nous avons également exploré le Transfer Learning avec le modèle VGG16 pour 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gagner en stabilité et en précision. <br>
+
+                Pour rendre compte de nos résultats, nous avons rédigé un rapport détaillé décrivant chaque étape du projet, ainsi qu'une analyse critique des pistes d'amélioration pour que nos modèles soient plus performant.
             <h3>L'évaluation</h3>
             <p>
-                - Qualité du code <br>
-                - Qualité des commentaires <br>
-                - Qualité des résultats : les résultats devaient être les mêmes pour les requêtes écrites en SQL et en MongoDB<br>
-                - Respect du cahier des charges <br>
+                - Qualité de la démarche <br>
+                - Qualité de la restitution : l'analyse de nos résultats <br>
             </p>
 
             <h3>Les compétences acquises</h3>
             <p>
-                - Apprendre à migrer une base de données relationnelles vers une base de données NoSQL<br>
-                - Écrire des requêtes en MangoDB <br>
-                - Approfondir l'utilisation du framework streamlit pour créer une application<br>
+                - Apprendre à créer un modèle de classification d'image<br>
+                - Apprendre à analyser ses résultats pour les améliorer <br>
             </p>
 
             <h3>Le bilan personnel</h3>
             <p>
-                Ce projet m'a permis de découvrir ce qu'est une base de données NoSQL et comment on peut requêter dessus en MongoDB. Il m'a aussi permis d'apprendre à faire une migration de base de données et de comprendre la différence entre une base de données relationnelle et NoSQL. 
+                Ce projet m'a permis de commencer à comprendre comment fonctionne un modèle de classification et plus précisément de type réseau de neurones. De plus, il m'a permis de comprendre l'importance d'analyser les résultats afin d'améliorer le modèle pour une meilleure performance.
             </p>
 
-            <a href="https://github.com/Xavier-Bar/SAE_MongoDB.git" alt="lien github" >Voir l'application (GitHub)</a>          
+            <a href="../../assets/projet/but3/rapport-RN.pdf" alt="lien rapport" >Voir le rapport</a>          
         </div> 
     </section>
 

@@ -328,96 +328,91 @@ section.work a.retour:active{
 }
 
 
-.enquete, .panNote, .gestionFichier, .martinique, .islande, .regression, .bdr, .echantillonnage, .dataviz, .indicateur, .grosseSAE, .portfolio
-, .ordiginal, .serieTemp, .VBAfoot, .airbnb, .portfolio2, .App_dash, .MusicApp, .Mydental, .MangoDB, .RN{
+/* 1. CONTENEUR GLOBAL DU PROJET (Dimensions réduites) */
+.enquete, .panNote, .gestionFichier, .martinique, .islande, .regression, 
+.bdr, .echantillonnage, .dataviz, .indicateur, .grosseSAE, .portfolio, 
+.ordiginal, .serieTemp, .VBAfoot, .airbnb, .portfolio2, .App_dash, 
+.MusicApp, .Mydental, .MangoDB, .RN {
     position: relative;
     width: 350px;
-    height: 250px;
+    height: 265px; /* Hauteur totale réduite */
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-left: auto;
-    margin-right: auto;
-    border:#003366 3px solid;
-    background-color: #003366;
-}
-
-
-.enquete img, .panNote img, .gestionFichier img, .martinique img, .islande img, .regression img, .bdr img, .echantillonnage img, .dataviz img,
-.indicateur img, .portfolio img, .ordiginal img, .serieTemp img, .VBAfoot img, .airbnb img, .portfolio2 img, .App_dash img, .MusicApp img, 
-.Mydental img, .MangoDB img, .RN img{
-    width: 350px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
+    margin: 15px auto;
     border: #003366 3px solid;
+    background-color: #003366;
+    display: flex;
 }
 
-.grosseSAE img{
-    width: 350px;
-    height: 200px;
+/* 2. IMAGES (Hauteur fixe pour toute la galerie) */
+.enquete img, .panNote img, .gestionFichier img, .martinique img, .islande img, 
+.regression img, .bdr img, .echantillonnage img, .dataviz img, .indicateur img, 
+.portfolio img, .ordiginal img, .serieTemp img, .VBAfoot img, .airbnb img, 
+.portfolio2 img, .App_dash img, .MusicApp img, .Mydental img, .MangoDB img, 
+.RN img, .grosseSAE img {
+    width: 100%;
+    height: 215px; /* L'image prend la majeure partie du bloc */
     object-fit: cover;
-    border-radius: 10px;
+    border-bottom: #003366 3px solid;
+    display: block;
+    transition: 0.3s;
 }
 
-.enquete a, .panNote a, .gestionFichier a, .martinique a, .islande a, .regression a, .bdr a, .echantillonnage a, .dataviz a, .indicateur a, 
-.grosseSAE a, .portfolio a, .ordiginal a, .serieTemp a, .VBAfoot a, .airbnb a, .portfolio2 a , .App_dash a, .MusicApp a, .Mydental a,
-.MangoDB a, .RN a{
+/* 3. LIENS (Conteneur cliquable) */
+.enquete a, .panNote a, .gestionFichier a, .martinique a, .islande a, 
+.regression a, .bdr a, .echantillonnage a, .dataviz a, .indicateur a, 
+.grosseSAE a, .portfolio a, .ordiginal a, .serieTemp a, .VBAfoot a, 
+.airbnb a, .portfolio2 a, .App_dash a, .MusicApp a, .Mydental a, 
+.MangoDB a, .RN a {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: black;
-    transition: color 0.1s ease;
 }
 
-.panNote h3, .martinique h3, .enquete h3, .gestionFichier h3, .islande h3, .regression h3, .bdr h3, .echantillonnage h3, .dataviz h3, 
-.indicateur h3, .grosseSAE h3, .portfolio h3, .ordiginal h3, .serieTemp h3,.VBAfoot h3, .airbnb h3, .portfolio2 h3 , .App_dash h3,
-.MusicApp h3, .Mydental h3, .MangoDB h3, .RN h3{
-    font-size: 14px;
-    margin-bottom: 10px;
-    text-align: center; 
+/* 4. TITRES H3 (Zone réduite et centrée) */
+.panNote h3, .martinique h3, .enquete h3, .gestionFichier h3, .islande h3, 
+.regression h3, .bdr h3, .echantillonnage h3, .dataviz h3, .indicateur h3, 
+.grosseSAE h3, .portfolio h3, .ordiginal h3, .serieTemp h3, .VBAfoot h3, 
+.airbnb h3, .portfolio2 h3, .App_dash h3, .MusicApp h3, .Mydental h3, 
+.MangoDB h3, .RN h3 {
+    font-size: 15px; /* Taille légèrement réduite pour l'harmonie */
     color: #a8dadc;
+    margin: 0;
+    padding: 2px 10px;
+    flex-grow: 1; /* Remplit l'espace restant en bas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 30px; /* Zone de texte plus fine */
+    line-height: 1.2;
 }
 
-.enquete a:hover, .panNote a:hover, .gestionFichier a:hover, .martinique a:hover, .islande a:hover, .regression a:hover, .bdr a:hover, 
-.echantillonnage a:hover, .dataviz a:hover, .indicateur a:hover, .grosseSAE a:hover, .portfolio a:hover, .ordiginal a:hover, .serieTemp a:hover, 
-.VBAfoot a:hover, .airbnb a:hover, .portfolio2 a:hover, .App_dash a:hover, .MusicApp a:hover, .Mydental a:hover, .MangoDB a:hover, .RN a:hover{
-    text-decoration: none;
-    transform: scale(1.02);  
-    color: #003366;
+/* 5. EFFETS HOVER (Survol) */
+.enquete a:hover, .panNote a:hover, .gestionFichier a:hover, .martinique a:hover, 
+.islande a:hover, .regression a:hover, .bdr a:hover, .echantillonnage a:hover, 
+.dataviz a:hover, .indicateur a:hover, .grosseSAE a:hover, .portfolio a:hover, 
+.ordiginal a:hover, .serieTemp a:hover, .VBAfoot a:hover, .airbnb a:hover, 
+.portfolio2 a:hover, .App_dash a:hover, .MusicApp a:hover, .Mydental a:hover, 
+.MangoDB a:hover, .RN a:hover {
     background-color: #a8dadc;
-    box-shadow: 0 0 25px ;
-    transition: 0.1s;
+    transform: scale(1.02);
+    transition: 0.2s ease-in-out;
 }
 
-.enquete a:hover h3,
-.panNote a:hover h3,
-.gestionFichier a:hover h3,
-.martinique a:hover h3,
-.islande a:hover h3,
-.regression a:hover h3,
-.bdr a:hover h3,
-.echantillonnage a:hover h3,
-.dataviz a:hover h3,
-.indicateur a:hover h3,
-.grosseSAE a:hover h3,
-.portfolio a:hover h3,
-.ordiginal a:hover h3,
-.serieTemp a:hover h3,
-.VBAfoot a:hover h3,
-.airbnb a:hover h3,
-.portfolio2 a:hover h3, 
-.App_dash a:hover h3,
-.MusicApp a:hover h3,
-.Mydental a:hover h3,
-.MangoDB a:hover h3,
-.RN a:hover h3{
-    color: #003366; /* Couleur foncée sur fond clair */
+.enquete a:hover h3, .panNote a:hover h3, .gestionFichier a:hover h3, 
+.martinique a:hover h3, .islande a:hover h3, .regression a:hover h3, 
+.bdr a:hover h3, .echantillonnage a:hover h3, .dataviz a:hover h3, 
+.indicateur a:hover h3, .grosseSAE a:hover h3, .portfolio a:hover h3, 
+.ordiginal a:hover h3, .serieTemp a:hover h3, .VBAfoot a:hover h3, 
+.airbnb a:hover h3, .portfolio2 a:hover h3, .App_dash a:hover h3, 
+.MusicApp a:hover h3, .Mydental a:hover h3, .MangoDB a:hover h3, 
+.RN a:hover h3 {
+    color: #003366;
 }
 
 

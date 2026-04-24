@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet perceptron</title>
+    <title>Création d'un chatbot</title>
     <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
@@ -22,57 +22,57 @@
         <div class="projet-content">
             <a href="../../projets.html" alt="page projet" class="retour">Retour</a>
 
-            <h1>Projet perceptron</h1>
+            <h1>Création d'un chatbot</h1>
             
             <div class="description">
                 <div class="bulle-content">
                     <span class="bulle">python</span>
-                    <span class="bulle">Word</span>
+                    <span class="bulle">Markdown</span>
                 </div>
                 <div class="texte-content">
-                    <span class="texte">durée : 20H | groupe : 2 personnes</span>
+                    <span class="texte">durée : 30H | groupe : 1 personnes</span>
                 </div>
 
             </div>
             <img src="../../assets/photo/LLM.png" alt="Le site web" class="project-image">
 
             <h2>L'objectif</h2>
-                <p> L'objectif de ce projet est de réaliser un système de dicrimination d'images réelles, soit un dispositif de classification. </p>
+                <p> L'objectif de ce projet est de construire un chatbot permettant de discuter avec mon jumeau virtuel, qui connait tout de
+                mon profil professionnel. 
+                </p>
 
             <h3>La description du projet</h3>
 
-            <p>
-               À notre disposition, nous avions la base de données Wang, composée de 1 000 images réelles réparties en 10 catégories (Jungle, Plage, Monuments, Bus, Dinosaures, Éléphants, Fleurs, Chevaux, Montagne et Plats). L’objectif était de concevoir un système capable d’attribuer automatiquement la bonne classe à une image inconnue.<br>
-                Pour ce projet, nous avons implémenté deux approches distinctes sous Keras et TensorFlow : <br>
+            <p>Pour construire ce chatbot, nous avons utilisé le modèle GPT-4.1-nano. À partir de mon portfolio, j'ai dû reprendre les informations que j'avais renseignées pour construire des fichiers Markdown. Ces fichiers doivent être très bien structurés avec différents niveaux de titres et des noms de titres très explicites afin de faciliter la recherche de l'agent.<br>
+                La réalisation s'est faite en plusieurs étapes :<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Préparation des données : J'ai commencé par développer une fonction qui permet de télécharger les fichiers Markdown.<br>
+                &nbsp;&nbsp;&nbsp;- Création des chunks : J'ai ensuite créé les "chunks", c'est-à-dire le découpage des fichiers en plusieurs morceaux. C'est ici que l'importance de la 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;structuration des Markdown prend tout son sens pour que le découpage soit cohérent.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Indexation : Après la création des chunks, il faut passer à l'indexation. C'est cette étape qui permet d'alimenter le moteur de recherche pour que le chatbot 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trouve les bonnes infos.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Interface : Pour finir, j'ai développé l'interface de l'application avec le framework Streamlit.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Une fois toutes ces étapes terminées, j'ai pu tester mon chatbot et apporter quelques améliorations pour affiner ses réponses.<br>
+                Pour finir, nous avons du écrire un mini rapport afin d'expliquer les différentes étpes du développement du chatbot.  
 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Approche par Perceptron Multi-couches (MLP) : Ma mission a consisté à mettre en place un système de discrimination basé sur des descripteurs d'images. 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Après la création d'un vecteur de labels, j'ai conçu un modèle séquentiel à 4 couches. Pour optimiser les performances, j'ai ajusté les hyperparamètres 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(normalisation, Dropout et régularisation L2) afin de limiter le surapprentissage. L'analyse des résultats s'est appuyée sur l'étude des courbes d'accuracy et des 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matrices de confusion. <br>
-
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Approche par Réseau de Neurones Convolutifs (CNN) : En parallèle, ma binôme a développé une stratégie "Deep" où le modèle extrait lui-même les 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caractéristiques des images via des couches de convolution et de pooling. Nous avons également exploré le Transfer Learning avec le modèle VGG16 pour 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gagner en stabilité et en précision. <br>
-
-                Pour rendre compte de nos résultats, nous avons rédigé un rapport détaillé décrivant chaque étape du projet, ainsi qu'une analyse critique des pistes d'amélioration pour que nos modèles soient plus performant.
+            </p>
             <h3>L'évaluation</h3>
             <p>
-                - Qualité de la démarche <br>
-                - Qualité de la restitution : l'analyse de nos résultats <br>
+                - Qualité du code <br>
+                - Fonctionnement du chatbot <br>
+                - Qualité du rapport <br>
             </p>
 
             <h3>Les compétences acquises</h3>
             <p>
-                - Apprendre à créer un modèle de classification d'image<br>
-                - Apprendre à analyser ses résultats pour les améliorer <br>
+                - Apprendre à utiliser un agent IA pour construire un chatbot<br>
             </p>
 
             <h3>Le bilan personnel</h3>
             <p>
-                Ce projet m'a permis de commencer à comprendre comment fonctionne un modèle de classification et plus précisément de type réseau de neurones. De plus, il m'a permis de comprendre l'importance d'analyser les résultats afin d'améliorer le modèle pour une meilleure performance.
+                Ce projet m'a permis d'apprendre à construire un chatbot. J'ai également compris l'importance de bien structurer les fichiers dans lesquels l'agent doit aller chercher, pour que les réponses du chatbot soient les plus pertinentes possibles.
             </p>
 
-            <a href="../../assets/projet/but3/rapport-RN.pdf" alt="lien rapport" >Voir le rapport</a>          
+            <a href="https://github.com/chloe-dcst/Projet_LLM.git" alt="lien gtihub" >Voir le projet (github)</a>          
         </div> 
     </section>
 

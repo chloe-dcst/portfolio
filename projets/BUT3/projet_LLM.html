@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création d'un chatbot</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <header class="header">
+         <a href="#" class="logo" >Portfolio</a>
+
+        <nav class="navbar">
+            <a href="../../index.html">Accueil</a>
+            <a href="../../projets.html">Projets</a>
+            <a href="../../about.html">À propos de moi</a>
+        </nav>
+
+    </header>
+
+    <section class="projets">
+        <div class="projet-content">
+            <a href="../../projets.html" alt="page projet" class="retour">Retour</a>
+
+            <h1>Création d'un chatbot</h1>
+            
+            <div class="description">
+                <div class="bulle-content">
+                    <span class="bulle">python</span>
+                    <span class="bulle">Markdown</span>
+                </div>
+                <div class="texte-content">
+                    <span class="texte">durée : 30H | groupe : 1 personnes</span>
+                </div>
+
+            </div>
+            <img src="../../assets/photo/LLM.png" alt="Le site web" class="project-image">
+
+            <h2>L'objectif</h2>
+                <p> L'objectif de ce projet est de construire un chatbot permettant de discuter avec mon jumeau virtuel, qui connait tout de
+                mon profil professionnel. 
+                </p>
+
+            <h3>La description du projet</h3>
+
+            <p>Pour construire ce chatbot, nous avons utilisé le modèle GPT-4.1-nano. À partir de mon portfolio, j'ai dû reprendre les informations que j'avais renseignées pour construire des fichiers Markdown. Ces fichiers doivent être très bien structurés avec différents niveaux de titres et des noms de titres très explicites afin de faciliter la recherche de l'agent.<br>
+                La réalisation s'est faite en plusieurs étapes :<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Préparation des données : J'ai commencé par développer une fonction qui permet de télécharger les fichiers Markdown.<br>
+                &nbsp;&nbsp;&nbsp;- Création des chunks : J'ai ensuite créé les "chunks", c'est-à-dire le découpage des fichiers en plusieurs morceaux. C'est ici que l'importance de la 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;structuration des Markdown prend tout son sens pour que le découpage soit cohérent.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Indexation : Après la création des chunks, il faut passer à l'indexation. C'est cette étape qui permet d'alimenter le moteur de recherche pour que le chatbot 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trouve les bonnes infos.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Interface : Pour finir, j'ai développé l'interface de l'application avec le framework Streamlit.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Une fois toutes ces étapes terminées, j'ai pu tester mon chatbot et apporter quelques améliorations pour affiner ses réponses.<br>
+                Pour finir, nous avons du écrire un mini rapport afin d'expliquer les différentes étpes du développement du chatbot.  
+
+            </p>
+            <h3>L'évaluation</h3>
+            <p>
+                - Qualité du code <br>
+                - Fonctionnement du chatbot <br>
+                - Qualité du rapport <br>
+            </p>
+
+            <h3>Les compétences acquises</h3>
+            <p>
+                - Apprendre à utiliser un agent IA pour construire un chatbot<br>
+            </p>
+
+            <h3>Le bilan personnel</h3>
+            <p>
+                Ce projet m'a permis d'apprendre à construire un chatbot. J'ai également compris l'importance de bien structurer les fichiers dans lesquels l'agent doit aller chercher, pour que les réponses du chatbot soient les plus pertinentes possibles.
+            </p>
+
+            <a href="https://github.com/chloe-dcst/Projet_LLM.git" alt="lien gtihub" >Voir le projet (github)</a>          
+        </div> 
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <ul class="list">
+                <li><a href="../../index.html">Accueil</a></li>
+                <li><a href="../../projets.html">Projets</a></li>
+                <li><a href="../../about.html">A propos de moi</a></li>
+            </ul>
+    
+            <div class="social">   
+                <a href="https://www.instagram.com/c.decoust27/">
+                    <img class="social-icon" src="../../assets/photo/insta.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61554652330017">
+                    <img class="social-icon" src="../../assets/photo/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/chloe-decoust-333207294">
+                    <img class="social-icon" src="../../assets/photo/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    
+        <div class="copyright">
+            &copy; 2026 Chloé Découst.
+        </div>
+    </footer>
+</body>
+</html>

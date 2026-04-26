@@ -37,39 +37,58 @@
             <img src="../../assets/photo/tweet.png" alt="Le site web" class="project-image">
 
             <h2>L'objectif</h2>
-                <p> L'objectif de ce projet est de réaliser un système de dicrimination d'images réelles, soit un dispositif de classification. </p>
+                <p> L'objectif de ce projet est de construire un système end-to-end d'analyse de sentiment en temps réel. </p>
 
             <h3>La description du projet</h3>
 
             <p>
-               À notre disposition, nous avions la base de données Wang, composée de 1 000 images réelles réparties en 10 catégories (Jungle, Plage, Monuments, Bus, Dinosaures, Éléphants, Fleurs, Chevaux, Montagne et Plats). L’objectif était de concevoir un système capable d’attribuer automatiquement la bonne classe à une image inconnue.<br>
-                Pour ce projet, nous avons implémenté deux approches distinctes sous Keras et TensorFlow : <br>
+                Pour faire ce projet, nous avions des fichiers Jupyter déjà construits avec en commentaire les consignes détaillées et des astuces. Il nous suffisait, dans chaque cellule d'écrire le code attendu. <br>
+               À notre disposition, nous avions le dataset Sentiment140 qui contient 1,6 million de tweets classés positifs ou négatifs. Nous avons fait la phase de développement avec un échantillon d'entraînement de 1 million de tweets et la phase de production sur les 600 000 restants.<br>
+               <br>
+               Ce projet s'est déroulé en plusieurs étapes : <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Etape 1 : Streaming avec Pyspark : le but de cette première étape est d'analyser un flux de tweets en temps réel avec Spark Structured Streaming.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Après m'être connecté au serveur TCP, j'ai extrait les variables dont j'avais besoin et transformé le code sentiment 0 et 4 en négatif et positif. Ensuite, j'ai pu
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calculé quelques indicateurs comme le nombre de tweets, le nombre de positifs et de négatifs par fenêtre de 30 secondes ou bien par utilisateur. Enfin, j'ai créé  
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un système d'alerte ou si le sentiement moyen est inférieur à -0,3, soit plus de 65% de négatifs, il y a une alerte.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Etape 2 : Construire un pipeline de Machine Learning capable de predire le sentiment (positif/negatif) d'un tweet a partir de son texte. Après avoir chargé le 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataset et ajouté une colonne label pour les sentiments, j'ai nettoyé le texte le plus possible afin d'méliorer la performance du modèle crée par la suite. Pour 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;construire mon modèle, j'ai mis en place un pipeline (une chaîne de traitement automatique) qui enchaîne les étapes suivantes : <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; La tokenisation : consiste à couper le texte pour isoler chaque mot.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Le StopWords : permet de nettoyer le texte en supprimant les mots « vides » qui n'apportent pas de sens (comme "le", "de", "et").<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Le Bigram : permet de regrouper les mots deux par deux (par exemple, "ne pas") pour conserver le contexte que des mots isolés perdraient.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; La vectorisation : transforme les mots et les bigrammes en listes de nombres pour qu'ils soient compréhensibles par l'ordinateur.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Le Vector Assembler : fusionne les mots seuls et les groupes de deux mots (bigrammes) en un seul bloc de données.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; L'IDF (Fréquence Documentaire Inverse) : une technique qui réduit l'importance des mots trop fréquents (comme "tweet") pour mettre en avant les mots 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plus rares et plus significatifs.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Le Normalizer : ajuste les données pour que la longueur d'un message (un tweet court ou long) n'influence pas injustement le résultat.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; La Régression Logistique : c'est le modèle final qui analyse toutes ces données pour classer automatiquement le tweet dans la bonne catégorie."<br>
+                     &nbsp;&nbsp; Enfin, j'ai sauvegardé le modèle sur HDFS (un système de stockage de données distribué) une fois que les résultats des metrics (les indicateurs de 
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;performance : accuracy, F1-score, ...) n'évoluaient plus. J'ai donc estimé que c'était le meilleur modèle que je pouvais obtenir.<br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Etape 3 : Construction d'un pipeline intégrant les étapes précédentes. Pour cette construction, j'ai commencé par vérifier la connexion à Kafka afin de créer un 
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; KafkaProducer (qui envoie les données) et un KafkaConsumer (qui les reçoit). Ensuite, j'ai configuré le Spark Streaming pour lire les messages Kafka en temps 
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;réel et y intégrer mon modèle de Machine Learning (ML). Enfin, j'ai écrit les résultats dans HDFS et sauvegardé les données pour permettre la réalisation du 
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dashboard (tableau de bord interactif). <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Etape 4 : Réalisation du Dashboard. A partir des résultats précedent, j'ai pu construire des indicateurs pour alimenter les différents graphiques.
+            </p>
 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Approche par Perceptron Multi-couches (MLP) : Ma mission a consisté à mettre en place un système de discrimination basé sur des descripteurs d'images. 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Après la création d'un vecteur de labels, j'ai conçu un modèle séquentiel à 4 couches. Pour optimiser les performances, j'ai ajusté les hyperparamètres 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(normalisation, Dropout et régularisation L2) afin de limiter le surapprentissage. L'analyse des résultats s'est appuyée sur l'étude des courbes d'accuracy et des 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matrices de confusion. <br>
-
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Approche par Réseau de Neurones Convolutifs (CNN) : En parallèle, ma binôme a développé une stratégie "Deep" où le modèle extrait lui-même les 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caractéristiques des images via des couches de convolution et de pooling. Nous avons également exploré le Transfer Learning avec le modèle VGG16 pour 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gagner en stabilité et en précision. <br>
-
-                Pour rendre compte de nos résultats, nous avons rédigé un rapport détaillé décrivant chaque étape du projet, ainsi qu'une analyse critique des pistes d'amélioration pour que nos modèles soient plus performant.
             <h3>L'évaluation</h3>
             <p>
-                - Qualité de la démarche <br>
-                - Qualité de la restitution : l'analyse de nos résultats <br>
+                - Respect des consignes <br>
+                - Qualité des résultats : modèle et dashboard <br>
+                - Réponses apportées aux questions <br>
             </p>
 
             <h3>Les compétences acquises</h3>
             <p>
-                - Apprendre à créer un modèle de classification d'image<br>
-                - Apprendre à analyser ses résultats pour les améliorer <br>
+                - Création d'un modèle de classification à partir de texte <br>
+                - Gestion d'un flux de données en temps réel <br>
+                - Construction d'un pipeline <br>
+                - Réalisation d'un dashboard interractif avec des données en temps réel <br>
             </p>
 
             <h3>Le bilan personnel</h3>
             <p>
-                Ce projet m'a permis de commencer à comprendre comment fonctionne un modèle de classification et plus précisément de type réseau de neurones. De plus, il m'a permis de comprendre l'importance d'analyser les résultats afin d'améliorer le modèle pour une meilleure performance.
+                Ce projet m'a permis d'apprendre à mettre en place un pipeline complet d'analyse de sentiments en temps réel, depuis le streaming de données jusqu'au dashboard final. J'ai aussi renforcé mes compétences en traitement de texte et en Machine Learning avec PySpark, notamment sur la préparation des données et l'amélioration d'un modèle de classification. Enfin, ce projet m'a permis de mieux comprendre l'importance de connecter plusieurs outils (Kafka, Spark, HDFS) pour construire une solution robuste et exploitable.
             </p>
 
             <a href="../../assets/projet/but3/mini_projet_tweet_chloe_decoust.zip" alt="lien rapport" >télécharger le projet</a>          

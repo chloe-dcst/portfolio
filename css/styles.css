@@ -677,3 +677,41 @@ body {
     font-size: 12px;
     color: white;
 }
+
+/* Le fond qui couvre tout l'écran */
+.mail-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 10000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond sombre */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Le petit cadre blanc */
+.mail-content {
+    background: #a8dadc;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    color: #333;
+}
+
+/* Le bouton copier */
+.btn-copier {
+    background-color: #003366; /* Ton bleu */
+    color: #a8dadc;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-copier:hover {
+    background-color: #0055aa;
+}

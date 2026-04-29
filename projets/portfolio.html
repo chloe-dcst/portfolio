@@ -85,9 +85,18 @@
             </ul>
     
             <div class="social">   
-                <a href="https://www.instagram.com/c.decoust27/">
-                    <img class="social-icon" src="../assets/photo/insta.png" alt="Instagram">
+                <a href="javascript:void(0);" onclick="ouvrirPopup()">
+                    <img class="social-icon" src="assets/photo/mail.png" alt="mail">
                 </a>
+
+                <div id="popupMail" class="mail-overlay" onclick="fermerPopup()">
+                    <div class="mail-content" onclick="event.stopPropagation()">
+                        <p id="monEmail" style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px;">chloedecoust@gmail.com</p>
+                        <button class="btn-copier" onclick="copierAdresse()">Copier l'adresse</button>
+                        <p id="msgConfirmation" style="display:none; color: #28a745; margin-top: 10px; font-size: 0.9em;">Copié !</p>
+                    </div>
+                </div>
+                
                 <a href="https://www.facebook.com/profile.php?id=61554652330017">
                     <img class="social-icon" src="../assets/photo/facebook.png" alt="Facebook">
                 </a>

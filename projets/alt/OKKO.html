@@ -80,8 +80,14 @@
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ensuite, je récupère le nombre de lignes contenues dans les tables de la liste quotidienne. Le but est de signaler une source de données non à jour si son nombre de lignes est inférieur ou égal à celui de la veille. Enfin, je modifie l'état des batchs (un batch initialement "OK" passe en "KO" s'il est impacté par un batch précédent en erreur) et j'intègre les liaisons avec les tableaux de bord. Identifier quel TDB est impacté par quel batch permet de gagner un temps précieux pour prévenir les utilisateurs qu'un reporting n'est pas à jour. Pour terminer, j'extrais la dernière date d'exécution de chaque batch (afin de ne conserver que le dernier état en cas de relances multiples) et j'exporte cette table finale vers un fichier Excel.
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>- Étape 3 : La conception de l'outil VBA -- OKKO --.</em> <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>- Étape 3 : La conception de l'outil VBA "OKKO".</em> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dans un premier temps, j'importe les données exportées par SAS dans la feuille "suivi_batch" de l'outil. Cette mise à jour s'effectue automatiquement à l'ouverture du fichier ou manuellement via les boutons "Voir tous les batchs" et "Actualiser". L'ensemble des autres vues sont générées dynamiquement à partir de cette copie.
+                Pour garantir l'intégrité des données, j'ai configuré l'outil pour que l'actualisation ne se fasse que par l'utilisation des boutons et non par la simple sélection des onglets. <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Côté interface, j'ai mis en place une liste déroulante permettant de consulter les informations détaillées d'un batch spécifique. J'ai également intégré deux filtres géographiques (Strasbourg et Niort) pour répondre aux besoins des collaborateurs qui gèrent prioritairement les traitements de leur propre site. <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pour optimiser la réactivité, j'ai privilégié une vision par état : l'objectif est d'identifier instantanément les batchs en échec afin de lancer le débogage au plus vite. Une vue détaillée est disponible pour obtenir l'exhaustivité des informations, bien que la liste déroulante reste l'option la plus lisible en cas d'erreurs multiples et volumineuses. Enfin, le bouton "Voir les batchs en cours" permet de surveiller spécifiquement les traitements actifs, une fonctionnalité essentielle pour détecter les batchs qui pourraient rester bloqués en file d'attente avant leur exécution. 
             </p>
 
             <h3>Le bilan personnel</h3>

@@ -45,14 +45,14 @@
                 <br>
             <h3>Le contexte</h3>
             <br>
-                <p>Actuellement, le suivi du bon déroulement des projets SAS qui s'exécute en automatique, les batchs, repose sur la boite mail d'équipe. À la fin de chaque exécution, un mail est automatiquement envoyé :<br>
+                <p>Actuellement, le suivi du bon déroulement des projets SAS qui s'exécute en automatique, les batchs, repose sur la boîte mail d'équipe. À la fin de chaque exécution, un mail est automatiquement envoyé :<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; En cas de succès, le mail est classé dans le dossier « CR Batchs SAS SUCCÈS »<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; En cas d’échec, le mail reste dans la boîte de réception en attendant d'être traité. <br>
                 Cependant, nous devons vérifier que tout s'est bien déroulé sur un certain nombre de projets. Ceux-ci concernent les trois marques (MAAF, MMA et GMF) et différents domaines fonctionnels : <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Santé individuelle <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Prévoyance individuelle <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Santé et prévoyance collective <br>
-                En effet, nous devons piloter un maximum de l'activité de la Direction Santé Prévoyance et nous avons de multiple sources de données. En conséquence, un volume important de batchs est exécuté quotidiennement, réparti sur deux
+                En effet, nous devons piloter un maximum de l'activité de la Direction Santé Prévoyance et nous avons de multiples sources de données. En conséquence, un volume important de batchs est exécuté quotidiennement, réparti sur deux
                 serveurs : <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Niort : environ 70 batchs <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Strasbourg : environ 20 batchs <br>
@@ -62,7 +62,7 @@
                 entraîner l’absence de données pour une journée complète dans nos tableaux de bord sans générer d’erreur technique.
                 Ces anomalies sont le plus souvent signalées a posteriori par les équipes métiers, car nous n'avons pas d'autre moyen de les repérer qu'en consultant le tableau de bord. Cependant, au vu du nombre de rapports en production, il est impossible de tous les vérifier chaque matin. <br>
                 Dans ce contexte, et après avoir recueilli les besoins de chaque membre de l'équipe, j'ai choisi de construire un outil VBA pour faciliter le débogage quotidien des batchs.
-                J'ai également penser à concevoir un tableau de bord à partir des statistique de l'historique. Le but de ce tableau de bord est de voir les erreurs récurrentes pour essayer de trouver des solutions.
+                J'ai également pensé à concevoir un tableau de bord à partir des statistiques de l'historique. Le but de ce tableau de bord est de voir les erreurs récurrentes pour essayer de trouver des solutions.
                 </p>
             <br>
             <h3>La description du projet</h3>
@@ -73,18 +73,18 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; <strong>La construction de l'outil : </strong><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; J'ai choisi de créer un outil VBA, mis à jour toutes les 15 minutes, qui analyse l'exécution des batchs des dernières 24 heures. Cet outil est lui-même articulé autour de 3 grandes étapes : <br>
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>- Étape 1 : La construction des fichiers de paramétrage. </em><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>- Étape 1 : la construction des fichiers de paramétrage. </em><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; J'ai commencé par concevoir les fichiers de paramétrage Excel via VBA. À partir d'une feuille d'inventaire regroupant l'ensemble des informations d'un projet SAS, j'ai constitué la liste des batchs et des programmes associés. J'y ai également lié les tables utilisées en leur attribuant un rôle précis : "LIT" (lecture seule), "ALIMENTE" (lecture et insertion) ou "PRODUIT" (création de la table). Ce travail m'a permis de déterminer les liaisons entre les différents batchs.<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ensuite, à partir du fichier Excel "inventaire_tdb" — mis à jour à chaque mise en production d'un nouveau reporting — j'ai associé à chaque batch les tableaux de bord qu'il alimente. Enfin, j'ai sollicité deux collaborateurs de l'équipe, à Strasbourg et à Niort, pour établir la liste des tables devant impérativement être mises à jour quotidiennement. <br>
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>- Étape 2 : Le projet SAS de génération de la table qui alimente l'outil.</em> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>- Étape 2 : le projet SAS de génération de la table qui alimente l'outil.</em> <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L’objectif de cette étape est de construire la table maîtresse alimentant l’outil VBA. Cette table consolide les informations d'exécution des batchs sur les dernières 24 heures. J'ai d'abord importé tous les fichiers de paramétrages construits précédemment. Puis pour chaque batch, via la lecture du fichier CTRLM (qui centralise le traitement d'un projet SAS : erreurs, heures de début et de fin), j'ai pu identifier le statut de chaque batch (en cours ou terminé). Si le statut est "terminé" mais qu'une erreur est détectée dans le fichier CTRLM, l'outil va alors lire la log du programme en échec pour récupérer un libellé d'erreur plus détaillé. <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ensuite, je récupère le nombre de lignes contenues dans les tables de la liste quotidienne. Le but est de signaler une source de données non à jour si son nombre de lignes est inférieur ou égal à celui de la veille.<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Puis, je modifie l'état des batchs (un batch initialement "OK" passe en "KO" s'il est impacté par un batch précédent en erreur) et j'intègre les liaisons avec les tableaux de bord. Le but est d'identifier quel TDB est impacté par quel batch ce qui permet de gagner un temps précieux pour prévenir les utilisateurs qu'un reporting n'est pas à jour. <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pour terminer, j'extrais la dernière date d'exécution de chaque batch afin de ne conserver que le dernier état en cas de relances multiples et j'exporte cette table finale vers un fichier Excel.
                 <br>
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>- Étape 3 : La conception de l'outil VBA "OKKO".</em> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>- Étape 3 : la conception de l'outil VBA "OKKO".</em> <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dans un premier temps, j'importe les données exportées par SAS dans la feuille "suivi_batch" de l'outil. Cette mise à jour s'effectue automatiquement à l'ouverture du fichier ou manuellement via les boutons "Voir tous les batchs" et "Actualiser". L'ensemble des autres vues sont générées dynamiquement à partir de cette copie.
                 Pour garantir l'intégrité des données, j'ai configuré l'outil pour que l'actualisation ne se fasse que par l'utilisation des boutons et non par la simple sélection des onglets. <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Côté interface, j'ai mis en place une liste déroulante permettant de consulter les informations détaillées d'un batch spécifique. J'ai également intégré deux filtres géographiques (Strasbourg et Niort) pour répondre aux besoins des collaborateurs qui gèrent prioritairement les traitements de leur propre site. <br>
@@ -92,11 +92,11 @@
                 <br>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; <strong>La conception du tableau de bord : </strong><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Je suis qu'à la phase de construction des indicateurs en attendant que les derniers bugs soient réglés. Cependant, j'ai déjà une petite vision des indicateurs qui apparaitrons dans le tableau de bord : <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Pourcentage sur l'état des batchs <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Récurrence des erreurs : si une erreur revient trop souvent nous essairons de trouver une solution <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Répartition des batchs par horraire : pour voir s'il y a une corrélation entre le nombre de batch et la fréquence des erreurs. <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Temps d'exécution moyen par batch : si un batch met trop de temps en moyenne, il faut peut être chercher à l'optimiser<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Je suis qu'à la phase de construction des indicateurs en attendant que les derniers bugs soient réglés. Cependant, j'ai déjà une petite vision des indicateurs qui apparaitront dans le tableau de bord : <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Pourcentage sur l'état des batchs. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Récurrence des erreurs : si une erreur revient trop souvent nous essaierons de trouver une solution. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Répartition des batchs par horaire : pour voir s'il y a une corrélation entre le nombre de batchs et la fréquence des erreurs. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Temps d'exécution moyen par batch : si un batch met trop de temps en moyenne, il faut peut-être chercher à l'optimiser.<br>
             
             </p>
             <br>

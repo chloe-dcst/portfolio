@@ -332,7 +332,7 @@ section.work a.retour:active{
 .enquete, .panNote, .gestionFichier, .martinique, .islande, .regression, 
 .bdr, .echantillonnage, .dataviz, .indicateur, .grosseSAE, .portfolio, 
 .ordiginal, .serieTemp, .VBAfoot, .airbnb, .portfolio2, .App_dash, 
-.MusicApp, .Mydental, .MangoDB, .RN, .ProjetLLM, .tweet{
+.MusicApp, .Mydental, .MangoDB, .RN, .ProjetLLM, .tweet, .okko{
     position: relative;
     width: 350px;
     height: 265px; /* Hauteur totale réduite */
@@ -351,7 +351,7 @@ section.work a.retour:active{
 .regression img, .bdr img, .echantillonnage img, .dataviz img, .indicateur img, 
 .portfolio img, .ordiginal img, .serieTemp img, .VBAfoot img, .airbnb img, 
 .portfolio2 img, .App_dash img, .MusicApp img, .Mydental img, .MangoDB img, 
-.RN img, .grosseSAE img, .ProjetLLM img, .tweet img{
+.RN img, .grosseSAE img, .ProjetLLM img, .tweet img, .okko img{
     width: 100%;
     height: 215px; /* L'image prend la majeure partie du bloc */
     object-fit: cover;
@@ -365,7 +365,7 @@ section.work a.retour:active{
 .regression a, .bdr a, .echantillonnage a, .dataviz a, .indicateur a, 
 .grosseSAE a, .portfolio a, .ordiginal a, .serieTemp a, .VBAfoot a, 
 .airbnb a, .portfolio2 a, .App_dash a, .MusicApp a, .Mydental a, 
-.MangoDB a, .RN a, .ProjetLLM a, .tweet a{
+.MangoDB a, .RN a, .ProjetLLM a, .tweet a, .okko a{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -378,7 +378,7 @@ section.work a.retour:active{
 .regression h3, .bdr h3, .echantillonnage h3, .dataviz h3, .indicateur h3, 
 .grosseSAE h3, .portfolio h3, .ordiginal h3, .serieTemp h3, .VBAfoot h3, 
 .airbnb h3, .portfolio2 h3, .App_dash h3, .MusicApp h3, .Mydental h3, 
-.MangoDB h3, .RN h3, .ProjetLLM h3, .tweet h3 {
+.MangoDB h3, .RN h3, .ProjetLLM h3, .tweet h3, .okko h3 {
     font-size: 15px; /* Taille légèrement réduite pour l'harmonie */
     color: #a8dadc;
     margin: 0;
@@ -398,7 +398,7 @@ section.work a.retour:active{
 .dataviz a:hover, .indicateur a:hover, .grosseSAE a:hover, .portfolio a:hover, 
 .ordiginal a:hover, .serieTemp a:hover, .VBAfoot a:hover, .airbnb a:hover, 
 .portfolio2 a:hover, .App_dash a:hover, .MusicApp a:hover, .Mydental a:hover, 
-.MangoDB a:hover, .RN a:hover, .ProjetLLM a:hover, .tweet a:hover {
+.MangoDB a:hover, .RN a:hover, .ProjetLLM a:hover, .tweet a:hover, .okko a:hover {
     background-color: #a8dadc;
     transform: scale(1.02);
     transition: 0.2s ease-in-out;
@@ -411,7 +411,7 @@ section.work a.retour:active{
 .ordiginal a:hover h3, .serieTemp a:hover h3, .VBAfoot a:hover h3, 
 .airbnb a:hover h3, .portfolio2 a:hover h3, .App_dash a:hover h3, 
 .MusicApp a:hover h3, .Mydental a:hover h3, .MangoDB a:hover h3, 
-.RN a:hover h3, .ProjetLLM a:hover h3, .tweet a:hover h3 {
+.RN a:hover h3, .ProjetLLM a:hover h3, .tweet a:hover h3, .okko a:hover h3 {
     color: #003366;
 }
 

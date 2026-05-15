@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chloé Découst | A propos de moi</title>
+    <title>Bilan — Mon Parcours</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="assets/js/script.js" defer></script>
+    <style>
+        /* Petite sécurité pour s'assurer que le header ne masque pas le contenu */
+        body { padding-top: 100px; }
+    </style>
 </head>
-
 <body>
 
     <header class="header">
-         <a href="#" class="logo" >Portfolio</a>
+        <a href="#" class="logo">Portfolio</a>
 
         <nav class="navbar">
             <a href="index.html">Accueil</a>
@@ -19,13 +22,55 @@
             <a href="bilan.html">Mon Parcours</a>
             <a href="about.html">À propos de moi</a>
         </nav>
-    
     </header>
 
-    <div class="titre">
-        <u>Mon Parcours</u>
-        <p>Pour découvrir mon cursus et les compétences acquises !</p>
-    </div>
+    <main class="bilan">
+        <section class="bilan-hero">
+            <div class="bilan-hero-inner">
+                <h1>Mon bilan — Parcours & compétences</h1>
+            </div>
+            <div class="bilan-hero-illustration" aria-hidden="true"></div>
+        </section>
+
+        <section class="bilan-cards">
+            <article class="card">
+                <div class="card-icon">🏫</div>
+                <h3>Formation</h3>
+                <p>Bachelor Universitaire de Technologie en Science des Données — parcours VCOD (Visualisation et Conception d'Outils Décisionnnels).</p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">💼</div>
+                <h3>Expérience</h3>
+                <p>Alternance chez Covéa (2024 - 2026) — Technicienne en études et reporting.<br>
+                    <strong>Mission : </strong> <br>
+                    &bull; Création de tableaux de bord <br>
+                    &bull; Etudes statistiques<br>
+                    &bull; Création d'outils d'aides à la décision <br>
+                    &bull; Maintenance des programmes
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🛠️</div>
+                <h3>Compétences</h3>
+                <p><strong>Développement : </strong> <br>
+                    Python, VBA, HTML, CSS, PHP, javascript, R, SAS,  <br>
+                <strong>Dataviz : </strong> <br>
+                    Power BI, SAS VA, Qlick, Tableau, BO, QGIS<br>
+                <strong>Organisation : </strong><br>
+                    Git Hub, méthode Scrum
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🏅</div>
+                <h3>Points forts</h3>
+                <p>Rigueur, autonomie, esprit d’équipe et sens de la présentation. </p>
+            </article>
+        </section>
+
+    </main>
     <section class="about">
         <div class="about-content">          
             

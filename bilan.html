@@ -6,10 +6,6 @@
     <title>Bilan — Mon Parcours</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="assets/js/script.js" defer></script>
-    <style>
-        /* Petite sécurité pour s'assurer que le header ne masque pas le contenu */
-        body { padding-top: 100px; }
-    </style>
 </head>
 <body>
 
@@ -24,38 +20,211 @@
         </nav>
     </header>
 
-    <main class="bilan">
-        <section class="bilan-hero">
-            <div class="bilan-hero-inner">
-                <h1>Mon bilan — Parcours & compétences</h1>
+    <div class="titre">
+        <u>Mon bilan — Parcours & compétences</u>
+        <p>Une vue d'ensemble de ma formation, expérience et compétences</p>
+        <nav>
+            <button class="btn-but" onclick="location.href='#en-coup-oeil'">En un coup d'œil</button>
+            <button class="btn-but" onclick="location.href='#chronologie'">Chronologie</button>
+            <button class="btn-but" onclick="location.href='#ce-que-appris'">Ce que j'ai appris</button>
+        </nav>
+    </div>
+
+    <!-- Section 1: En un coup d'œil -->
+    <section id="en-coup-oeil" class="about">
+        <div class="about-content">
+            <h2>En un coup d'œil</h2>
+            
+            <div class="bilan-cards">
+                <article class="card">
+                    <div class="card-icon">🏫</div>
+                    <h3>Formation</h3>
+                    <p>Bachelor Universitaire de Technologie en Science des Données — parcours VCOD.</p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">💼</div>
+                    <h3>Expérience</h3>
+                    <p>Alternance chez Covéa depuis 2024, Technicienne en études et reporting.</p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Compétences</h3>
+                    <p><strong>Dev :</strong> Python, VBA, HTML, CSS, PHP, JavaScript, R, SAS, SQL<br><strong>Dataviz :</strong> Power BI, Qlik, Tableau<br><strong>Outils :</strong> GitHub, Scrum</p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">🏅</div>
+                    <h3>Qualités</h3>
+                    <p>Rigueur, autonomie, analytique, organisée, méthodique, esprit d'équipe.</p>
+                </article>
             </div>
-            <div class="bilan-hero-illustration" aria-hidden="true"></div>
-        </section>
+        </div>
+    </section>
 
-        <section class="bilan-cards">
-            <article class="card">
-                <div class="card-icon">🏫</div>
-                <h3>Formation</h3>
-                <p>Bachelor Universitaire de Technologie en Science des Données — parcours VCOD (Visualisation et Conception d'Outils Décisionnnels).</p>
-            </article>
+    <!-- Section 2: Chronologie du parcours -->
+    <section id="chronologie" class="about">
+        <div class="about-content">
+            <h2>Chronologie du parcours</h2>
+            
+            <div class="timeline-vertical">
+                <div class="timeline-step timeline-left" onclick="afficherBilan('bac')">
+                    <div class="step-content">
+                        <h4>2023</h4>
+                        <p>Baccalauréat Général</p>
+                        <small>Mention assez bien</small>
+                    </div>
+                    <div class="step-dot"></div>
+                </div>
 
-            <article class="card">
-                <div class="card-icon">💼</div>
-                <h3>Expérience</h3>
-                <p>Alternance chez Covéa (2024 - 2026) — Technicienne en études et reporting.<br>
-                    <strong>Mission : </strong> <br>
-                    &bull; Création de tableaux de bord <br>
-                    &bull; Etudes statistiques<br>
-                    &bull; Création d'outils d'aides à la décision <br>
-                    &bull; Maintenance des programmes
-                </p>
-            </article>
+                <div class="timeline-step timeline-right" onclick="afficherBilan('annee1')">
+                    <div class="step-dot"></div>
+                    <div class="step-content">
+                        <h4>Année 1<br>(2023-24)</h4>
+                        <p>BUT Science des Données</p>
+                        <small>Excellents résultats</small>
+                    </div>
+                </div>
 
-            <article class="card">
-                <div class="card-icon">🛠️</div>
-                <h3>Compétences</h3>
-                <p><strong>Développement : </strong> <br>
-                    Python, VBA, HTML, CSS, PHP, javascript, R, SAS,  <br>
+                <div class="timeline-step timeline-left" onclick="afficherBilan('annee2')">
+                    <div class="step-content">
+                        <h4>Année 2<br>(2024-25)</h4>
+                        <p>Spécialité VCOD</p>
+                        <small>+ Alternance Covéa</small>
+                    </div>
+                    <div class="step-dot"></div>
+                </div>
+
+                <div class="timeline-step timeline-right" onclick="afficherBilan('annee3')">
+                    <div class="step-dot"></div>
+                    <div class="step-content">
+                        <h4>Année 3<br>(2025-26)</h4>
+                        <p>Pilotage Opérationnel</p>
+                        <small>Continuation Covéa</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Bilan -->
+            <div id="bilanModal" class="bilan-modal" onclick="fermerBilan()">
+                <div class="bilan-modal-content" onclick="event.stopPropagation()">
+                    <button class="close-btn" onclick="fermerBilan()">&times;</button>
+                    
+                    <div id="bac" class="bilan-detail" style="display:none;">
+                        <h3>2023 — Baccalauréat Général</h3>
+                        <!-- Écris ton bilan ici -->
+                    </div>
+
+                    <div id="annee1" class="bilan-detail" style="display:none;">
+                        <h3>Année 1 (2023-24) — BUT Science des Données</h3>
+                        <!-- Écris ton bilan ici -->
+                    </div>
+
+                    <div id="annee2" class="bilan-detail" style="display:none;">
+                        <h3>Année 2 (2024-25) — Spécialité VCOD + Alternance</h3>
+                        <!-- Écris ton bilan ici -->
+                    </div>
+
+                    <div id="annee3" class="bilan-detail" style="display:none;">
+                        <h3>Année 3 (2025-26) — Alternance Pilotage Opérationnel</h3>
+                        <!-- Écris ton bilan ici -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Ce que j'ai appris -->
+    <section id="ce-que-appris" class="about">
+        <div class="about-content">
+            <h2>Ce que j'ai appris</h2>
+
+            <div class="learning-section">
+                <h3>Compétences transversales développées</h3>
+                
+                <div class="learning-list">
+                    <div class="learning-item">
+                        <span class="learning-number">1.</span>
+                        <div class="learning-text">
+                            <strong>Rigueur et organisation</strong> — Amélioration de ma gestion du temps et de ma capacité à équilibrer plusieurs projets simultanément sans sacrifier la qualité de mon travail.
+                        </div>
+                    </div>
+
+                    <div class="learning-item">
+                        <span class="learning-number">2.</span>
+                        <div class="learning-text">
+                            <strong>Maîtrise technique progressive</strong> — Excellents résultats en programmation malgré l'absence de base préalable, démontrant ma capacité d'apprentissage et d'adaptation.
+                        </div>
+                    </div>
+
+                    <div class="learning-item">
+                        <span class="learning-number">3.</span>
+                        <div class="learning-text">
+                            <strong>Intégration théorie-pratique</strong> — Capacité à appliquer les concepts théoriques dans des projets concrets, validant la compréhension et renforçant l'apprentissage.
+                        </div>
+                    </div>
+
+                    <div class="learning-item">
+                        <span class="learning-number">4.</span>
+                        <div class="learning-text">
+                            <strong>Expérience professionnelle en alternance</strong> — Intégration réussie en entreprise (Covéa), développement de compétences métier et compréhension du monde du travail.
+                        </div>
+                    </div>
+
+                    <div class="learning-item">
+                        <span class="learning-number">5.</span>
+                        <div class="learning-text">
+                            <strong>Travail en équipe et communication</strong> — Développement des soft skills à travers les projets collaboratifs et l'environnement professionnel.
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2.5rem;">Conclusion</h3>
+                <p>Ces trois années m'ont permis de développer une solide fondation en informatique, en mathématiques et en analyse de données. L'alternance a été un élément clé de ma formation, consolidant les apprentissages théoriques par l'application directe en entreprise. Cette combinaison m'a convaincu que le terrain professionnel demeure le meilleur formateur pour développer des compétences durables et pertinentes.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <ul class="list">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="bilan.html">Mon Parcours</a></li>
+                <li><a href="about.html">A propos de moi</a></li>
+            </ul>
+    
+            <div class="social">   
+                <a href="javascript:void(0);" onclick="ouvrirPopup()">
+                    <img class="social-icon" src="assets/photo/mail.png" alt="mail">
+                </a>
+
+                <div id="popupMail" class="mail-overlay" onclick="fermerPopup()">
+                    <div class="mail-content" onclick="event.stopPropagation()">
+                        <p id="monEmail" style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px;">chloedecoust@gmail.com</p>
+                        <button class="btn-copier" onclick="copierAdresse()">Copier l'adresse</button>
+                        <p id="msgConfirmation" style="display:none; color: #28a745; margin-top: 10px; font-size: 0.9em;">Copié !</p>
+                    </div>
+                </div>
+                
+                <a href="https://www.facebook.com/profile.php?id=61554652330017">
+                    <img class="social-icon" src="assets/photo/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/chloe-decoust-333207294">
+                    <img class="social-icon" src="assets/photo/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    
+        <div class="copyright">
+            &copy; 2026 Chloé Découst.
+        </div>
+    </footer>
+
+</body>
+</html> <br>
+                    Python, VBA, HTML, CSS, PHP, javascript, R, SAS, SQL, NoSQL  <br>
                 <strong>Dataviz : </strong> <br>
                     Power BI, SAS VA, Qlick, Tableau, BO, QGIS<br>
                 <strong>Organisation : </strong><br>
@@ -66,15 +235,11 @@
             <article class="card">
                 <div class="card-icon">🏅</div>
                 <h3>Points forts</h3>
-                <p>Rigueur, autonomie, esprit d’équipe et sens de la présentation. </p>
-            </article>
-        </section>
+                <p>Rigueur, autonomie, réfléchie, organisé, méthodique, esprit d’équipe et sens de la présentation. </p>
+                    </article>
+                </div>
 
-    </main>
-    <section class="about">
-        <div class="about-content">          
-            
-            <h2>Mes études</h2>
+                <h2>Mes études</h2>
 
             <h3>Mon parcours scolaire</h3>
             <p>
@@ -109,9 +274,10 @@
                 Du côté de l'alternance, je ne regrette absolument pas mon choix de faire cette formation en alternance. J'ai beaucoup appris en entreprise et j'ai pu mettre en pratique ce que j'avais appris en cours. J'ai aussi pu découvrir le monde du travail et la vie en entreprise ce qui m'a permis de monter en compétences autant techniquement qu'humainement. 
                 J'espère que cela continuera ainsi pour ma dernière année de BUT.
                 Cependant, je commence à me poser des questions sur le suite de mes études. Je suis très intéressée par faire un master pour poursuivre mes études, mais je ne sais pas encore dans quel domaine. Je sais tout de même que si je continue mes études je souhaite que ce soit en alternance, je trouve qu'il n'y a pas plus formateur que d'apprendre directement en entreprise.
-            </p>
-        </div>
-    </section>
+                </p>
+            </div>
+        </section>
+    </main>
     <footer class="footer">
         <div class="footer-content">
             <ul class="list">

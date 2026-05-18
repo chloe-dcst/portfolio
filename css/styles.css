@@ -974,6 +974,10 @@ a.retour:active{
     font-size: 1.1rem;
     margin: 0 0 0.5rem 0;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
 }
 
 .step-content p {
@@ -987,6 +991,29 @@ a.retour:active{
     color: #003366;
     font-size: 0.85rem;
     font-style: italic;
+}
+
+.chevron {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #003366;
+    opacity: 0;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.timeline-step:hover .chevron {
+    opacity: 1;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px);
+    }
 }
 
 /* Timeline vertical responsive */

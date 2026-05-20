@@ -687,13 +687,17 @@ a.retour:active{
     align-items: center;
     justify-content: space-between;
     padding: 2.4rem;
-    background: linear-gradient(135deg, #a8dadc 0%, #eaf6f8 100%);
-    border-radius: 14px;
-    box-shadow: 0 6px 30px rgba(16,58,87,0.06);
-}
-
-.bilan-hero-inner h1{
-    font-size: 2rem;
+    .overview-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.2rem;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: start;
+        justify-items: stretch;
+        width: 100%;
+    }
     color: #003366;
     margin-bottom: 0.4rem;
 }
@@ -788,6 +792,19 @@ a.retour:active{
     body { padding-top: 120px; }
 }
 
+    @media (max-width: 700px){
+        .overview-cards { grid-template-columns: repeat(2,1fr) !important; }
+    }
+
+    @media (max-width: 420px){
+        .overview-cards { grid-template-columns: 1fr !important; }
+    }
+
+    /* Ensure 3 columns on medium+ screens */
+    @media (min-width: 701px){
+        .overview-cards { grid-template-columns: repeat(3,1fr) !important; }
+    }
+
 @media (max-width: 520px){
     .bilan-cards{ grid-template-columns: 1fr; }
     .bilan-hero-illustration{ font-size: 3rem }
@@ -797,6 +814,33 @@ a.retour:active{
 /* ===== AMÉLIORATION VISUELLE DES CARTES POUR BILAN.HTML ===== */
 .about-content .bilan-cards {
     margin: 2.5rem 0 3rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Overview cards (top section) - use same layout as bottom bilan-cards */
+.overview-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2.5rem 0 3rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    align-items: start;
+}
+/* Make all overview cards equal-height */
+.overview-cards {
+    grid-auto-rows: 1fr;
+}
+.overview-cards .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .about-content .card {

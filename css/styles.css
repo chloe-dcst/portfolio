@@ -157,11 +157,13 @@ span{
 
 ::-webkit-scrollbar-thumb{
     background-color: #003366;
+    border-radius: 50px;
 }
 
 ::-webkit-scrollbar-track{
     background-color: #4a6a8a;
     width: 50px;
+    border-radius: 50px;
 }
 
 /* style pour la page projets */

@@ -1,6 +1,8 @@
 /* Style global */ 
 html{
     scroll-behavior: smooth;
+    /* Ensure anchored scrolling accounts for the fixed header */
+    scroll-padding-top: 120px;
 }
 * {
     margin: 0;
@@ -169,6 +171,7 @@ span{
 /* style pour la page projets */
 .titre{
     margin-top: 115px;
+    margin-bottom: 50px;
     font-size: 50px;
     text-align: center;
     color: #003366;
@@ -529,7 +532,7 @@ a.retour:active{
 
 .about-content {
     background-color: #a8dadc;
-    padding: 30px;
+    padding: 18px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -713,8 +716,8 @@ a.retour:active{
 .bilan-cards{
     display:grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 1rem;
-    margin: 2rem 0;
+    gap: 0.6rem;
+    margin: 1rem 0;
 }
 
 .card{
@@ -846,10 +849,10 @@ a.retour:active{
 .about-content .card {
     background: linear-gradient(135deg, #a8dadc 0%, #d4f1f4 100%);
     border: 2px solid #003366;
-    padding: 2rem 1.5rem;
+    padding: 1.2rem 1rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(16, 58, 87, 0.08);
-    min-height: 180px;
+    min-height: 140px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 }
@@ -1009,8 +1012,8 @@ a.retour:active{
     background: linear-gradient(135deg, #a8dadc 0%, #d4f1f4 100%);
     border: 3px solid #003366;
     border-radius: 12px;
-    padding: 1.3rem;
-    min-width: 220px;
+    padding: 1.45rem 1.55rem;
+    min-width: 250px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -1024,6 +1027,10 @@ a.retour:active{
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
+}
+
+.step-content h4 span:first-child {
+    white-space: nowrap;
 }
 
 .step-content p {
@@ -1077,7 +1084,7 @@ a.retour:active{
     }
     
     .step-content {
-        min-width: 200px;
+        min-width: 230px;
     }
 }
 
@@ -1115,7 +1122,8 @@ a.retour:active{
     }
     
     .step-content {
-        min-width: 200px;
+        min-width: 0;
+        width: min(100%, 320px);
     }
 }
 
@@ -1315,5 +1323,12 @@ a.retour:active{
     
     .bilan-detail h3 {
         font-size: 1.2rem;
+    }
+}
+
+/* Reduce scroll offset on small screens where header is smaller */
+@media (max-width: 520px) {
+    html {
+        scroll-padding-top: 90px;
     }
 }

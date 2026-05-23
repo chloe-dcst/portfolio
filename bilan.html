@@ -73,7 +73,7 @@
                 <div class="timeline-step timeline-right" onclick="afficherBilan('annee1')">
                     <div class="step-dot"></div>
                     <div class="step-content">
-                        <h4><span>2023-2024<br>(BUT1)</span><span class="chevron">▼</span></h4>
+                        <h4><span>2023-2024 (BUT1)</span><span class="chevron">▼</span></h4>
                         <p>BUT Science des Données</p>
                         <small>Excellents résultats</small>
                     </div>
@@ -81,7 +81,7 @@
 
                 <div class="timeline-step timeline-left" onclick="afficherBilan('annee2')">
                     <div class="step-content">
-                        <h4><span>2024-2025<br>(BUT2)</span><span class="chevron">▼</span></h4>
+                        <h4><span>2024-2025 (BUT2)</span><span class="chevron">▼</span></h4>
                         <p>Spécialité VCOD</p>
                         <small>+ Alternance Covéa</small>
                     </div>
@@ -91,9 +91,27 @@
                 <div class="timeline-step timeline-right" onclick="afficherBilan('annee3')">
                     <div class="step-dot"></div>
                     <div class="step-content">
-                        <h4><span>2025-2026<br>(BUT3)</span><span class="chevron">▼</span></h4>
+                        <h4><span>2025-2026 (BUT3)</span><span class="chevron">▼</span></h4>
                         <p>Obtention du diplôme</p>
                         <small>+ Continuation chez Covéa</small>
+                    </div>
+                </div>
+
+                <div class="timeline-step timeline-left" onclick="afficherBilan('ima')">
+                    <div class="step-content">
+                        <h4><span>IMA</span><span class="chevron">▼</span></h4>
+                        <p>Poste étudiant</p>
+                        <small>À compléter</small>
+                    </div>
+                    <div class="step-dot"></div>
+                </div>
+
+                <div class="timeline-step timeline-right" onclick="afficherBilan('quick')">
+                    <div class="step-dot"></div>
+                    <div class="step-content">
+                        <h4><span>Quick</span><span class="chevron">▼</span></h4>
+                        <p>Poste étudiant</p>
+                        <small>À compléter</small>
                     </div>
                 </div>
             </div>
@@ -119,6 +137,15 @@
                             <br>
                             <p>En conclusion, cette première année m'a permis de <strong>construire des bases solides en informatique et en programmation</strong>, tout en approfondissant mes compétences en mathématiques. Elle m'a aussi permis de <strong>découvrir de nouveaux domaines comme la gestion, l'économie ou la communication</strong>. J'aborde mes deux prochaines années avec la ferme intention de continuer sur cette lancée.</p>
                         </p>
+                    </div>
+                    <div id="ima" class="bilan-detail" style="display:none;">
+                        <h3>IMA — Poste étudiant</h3>
+                        <p>À compléter par Chloé. Mets ici les dates, le poste et les compétences développées.</p>
+                    </div>
+
+                    <div id="quick" class="bilan-detail" style="display:none;">
+                        <h3>Quick — Poste étudiant</h3>
+                        <p>À compléter par Chloé. Mets ici les dates, le poste et les compétences développées.</p>
                     </div>
 
                     <div id="annee2" class="bilan-detail" style="display:none;">
@@ -149,27 +176,36 @@
 
             <div class="bilan-cards">
                 <article class="card">
-                    <h3>Hard skills</h3>
-                    <p><strong>Langages :</strong> Python, SQL, R, SAS<br>
-                    <strong>Web & scripting :</strong> HTML, CSS, JavaScript, PHP, VBA, PowerShell<br>
-                    <strong>Dataviz & BI :</strong> Power BI, Qlik, Tableau, Plotly<br>
-                    <strong>Big Data & infra :</strong> PySpark, Kafka, HDFS, Docker</p>
+                    <h3>Compétences techniques</h3>
+                    <p><strong>Langages de programmation :</strong> Python, VBA, SQL, R, SAS, NoSQL (MongoBD)<br>
+                    <strong>Developpement web :</strong> HTML, CSS, JavaScript, PHP, Streamlit <br>
+                    <strong>Logiciel de datavisualisation :</strong> Power BI, Qlik, Tableau, SAS VA, BO, QGIS <br>
+                    <strong>Gestion des big data :</strong> PySpark, Kafka, HDFS, Docker<br>
+                    <strong>Source de données :</strong> Excel, CSV, JSON, MySQL, Oracle, PostgreSQL<br>
+                    <strong>Gestion de projet :</strong> GitHub, Scrum
+                    </p>
                 </article>
 
                 <article class="card">
-                    <h3>Soft skills développés</h3>
-                    <p><strong>Autonomie :</strong> Mener des projets sans cadrage rigide, rechercher des solutions indépendamment<br>
-                    <strong>Collaboration :</strong> Communication efficace, respect des délais, partage de connaissances<br>
-                    <strong>Rigueur :</strong> Gestion multi-projets, anticipation, documentation qualitative<br>
-                    <strong>Communication :</strong> Présentations claires, expression des besoins, adaptation au contexte</p>
+                    <h3>Acquis professionnels</h3>
+                    <p><strong>Communication & relationnel :</strong> Communication · Écoute · Sens du contact · Pédagogie<br>
+                    <strong>Organisation & autonomie :</strong> Autonomie · Organisation · Gestion des délais · Persévérance<br>
+                    <strong>Analyse & méthode :</strong> Esprit d'analyse · Rigueur · Respect du cahier des charges · Gestion des contraintes<br>
+                    <strong>Réactivité & résistance au stress :</strong> Réactivité · Gestion du stress · Rapidité d'exécution · Adaptabilité<br>
+                    <strong>Créativité & résolution :</strong> Créativité</p>
                 </article>
 
                 <article class="card">
-                    <h3>Principes & méthodologies</h3>
-                    <p><strong>Qualité des données :</strong> Nettoyage, structuration pour résultats fiables<br>
-                    <strong>Design thinking :</strong> Centrage utilisateur, ergonomie avant performance<br>
-                    <strong>Gestion de projet :</strong> Scrum, GitHub, itérations rapides<br>
-                    <strong>Apprentissage continu :</strong> Montée en compétences rapide face aux nouveaux outils</p>
+                    <h3>Missions réalisables</h3>
+                    <p>
+                        &bull; Concevoir et maintenir des tableaux de bord<br>
+                        &bull; Automatiser des rapports et pipelines de données<br>
+                        &bull; Nettoyer, transformer et migrer des jeux de données<br>
+                        &bull; Développer des outils ou interfaces web simples<br>
+                        &bull; Concevoir des indicateurs et rapports métier (recueil des besoins → livraison)<br>
+                        &bull; Déployer des solutions conteneurisées simples<br>
+                        &bull; Rédiger documentation, cahiers de recettes et rapports d'analyse<br>
+                    </p>
                 </article>
             </div>
 

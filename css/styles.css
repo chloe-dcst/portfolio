@@ -195,12 +195,12 @@ span{
 }
 
 .titre nav{
-        margin-top: 20px;
-        width: 345px;
-        display: flex;
-        gap: 2em;
-        justify-content: center;
-    }
+    margin-top: 20px;
+    width: 345px;
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
 
 .btn-but{
     padding: 15px 28px;
@@ -216,6 +216,30 @@ span{
     cursor: pointer;
     text-align: center;
     display: inline-block; 
+}
+
+/* Buttons in the title keep their default sizing (no scoped flex rules applied) */
+
+/* Page-specific: make titre buttons flexible on the bilan page only */
+.page-bilan .titre nav{
+    width: 100%;
+    max-width: 900px;
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+    flex-wrap: nowrap; /* prefer single line */
+    align-items: center;
+}
+
+.page-bilan .titre nav .btn-but{
+    flex: 1 1 140px;
+    min-width: 120px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px){
+    .page-bilan .titre nav{ flex-wrap: wrap; }
+    .page-bilan .titre nav .btn-but{ flex: 1 1 120px; }
 }
 
 .btn-but:hover{
@@ -568,6 +592,12 @@ a.retour:active{
     text-align: justify;
 }
 
+/* Synthèse spécifique : justification et interligne plus large */
+#synthese .about-content > p {
+    text-align: justify;
+    line-height: 1.9;
+}
+
 
 
 .footer {
@@ -762,6 +792,16 @@ a.retour:active{
     text-align: justify;
     transition: color 0.3s ease;
 }
+
+/* Classe utilitaire pour justifier des paragraphes ciblés */
+.justify {
+    text-align: justify;
+}
+
+/* Justification ciblée pour la card "Expérience" dans la section "En un coup d'œil" */
+#en-coup-oeil .bilan-cards article:nth-child(2) p {
+    text-align: justify;
+}
 .card:hover p {
     color: #003366;
 }
@@ -915,6 +955,11 @@ a.retour:active{
     line-height: 1.7;
     text-align: left;
     margin-bottom: 1.2rem;
+}
+
+#synthese .about-content > p {
+    text-align: justify;
+    line-height: 1.9;
 }
 
 @media (max-width: 900px) {

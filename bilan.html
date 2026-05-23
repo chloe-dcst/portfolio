@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="assets/js/script.js" defer></script>
 </head>
-<body>
+<body class="page-bilan">
 
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
@@ -27,6 +27,7 @@
             <button class="btn-but" onclick="location.href='#en-coup-oeil'">En un coup d'œil</button>
             <button class="btn-but" onclick="location.href='#chronologie'">Chronologie</button>
             <button class="btn-but" onclick="location.href='#ce-que-appris'">Ce que j'ai appris</button>
+            <button class="btn-but" onclick="location.href='#synthese'">Ce que j'e retiens</button>
         </nav>
     </div>
 
@@ -43,7 +44,8 @@
 
                 <article class="card">
                     <h3>Expérience</h3>
-                    <p>Alternance chez Covéa depuis 2024, Technicienne en études et reporting. J'ai travaillé sur la conception et la maintenance de tableaux de bord, l'automatisation de rapports et l'analyse opérationnelle.</p>
+                    <p><strong>Alternance chez Covéa</strong> depuis 2024, Technicienne en études et reporting. <br>
+                         J'ai travaillé sur la conception et la maintenance de tableaux de bord, l'automatisation de rapports et l'analyse opérationnelle.</p>
                 </article>
 
                 <article class="card">
@@ -96,24 +98,7 @@
                         <small>+ Continuation chez Covéa</small>
                     </div>
                 </div>
-
-                <div class="timeline-step timeline-left" onclick="afficherBilan('ima')">
-                    <div class="step-content">
-                        <h4><span>IMA</span><span class="chevron">▼</span></h4>
-                        <p>Poste étudiant</p>
-                        <small>À compléter</small>
-                    </div>
-                    <div class="step-dot"></div>
-                </div>
-
-                <div class="timeline-step timeline-right" onclick="afficherBilan('quick')">
-                    <div class="step-dot"></div>
-                    <div class="step-content">
-                        <h4><span>Quick</span><span class="chevron">▼</span></h4>
-                        <p>Poste étudiant</p>
-                        <small>À compléter</small>
-                    </div>
-                </div>
+                
             </div>
 
             <!-- Modal Bilan -->
@@ -137,15 +122,6 @@
                             <br>
                             <p>En conclusion, cette première année m'a permis de <strong>construire des bases solides en informatique et en programmation</strong>, tout en approfondissant mes compétences en mathématiques. Elle m'a aussi permis de <strong>découvrir de nouveaux domaines comme la gestion, l'économie ou la communication</strong>. J'aborde mes deux prochaines années avec la ferme intention de continuer sur cette lancée.</p>
                         </p>
-                    </div>
-                    <div id="ima" class="bilan-detail" style="display:none;">
-                        <h3>IMA — Poste étudiant</h3>
-                        <p>À compléter par Chloé. Mets ici les dates, le poste et les compétences développées.</p>
-                    </div>
-
-                    <div id="quick" class="bilan-detail" style="display:none;">
-                        <h3>Quick — Poste étudiant</h3>
-                        <p>À compléter par Chloé. Mets ici les dates, le poste et les compétences développées.</p>
                     </div>
 
                     <div id="annee2" class="bilan-detail" style="display:none;">
@@ -177,12 +153,12 @@
             <div class="bilan-cards">
                 <article class="card">
                     <h3>Compétences techniques</h3>
-                    <p><strong>Langages de programmation :</strong> Python, VBA, SQL, R, SAS, NoSQL (MongoBD)<br>
-                    <strong>Developpement web :</strong> HTML, CSS, JavaScript, PHP, Streamlit <br>
-                    <strong>Logiciel de datavisualisation :</strong> Power BI, Qlik, Tableau, SAS VA, BO, QGIS <br>
-                    <strong>Gestion des big data :</strong> PySpark, Kafka, HDFS, Docker<br>
-                    <strong>Source de données :</strong> Excel, CSV, JSON, MySQL, Oracle, PostgreSQL<br>
-                    <strong>Gestion de projet :</strong> GitHub, Scrum
+                    <p><strong>Langages de programmation :</strong> Python · VBA · SQL · R · SAS · NoSQL (MongoBD)<br>
+                    <strong>Developpement web :</strong> HTML · CSS · JavaScript · PHP · Streamlit <br>
+                    <strong>Logiciel de datavisualisation :</strong> Power BI · Qlik · Tableau · SAS VA · BO · QGIS <br>
+                    <strong>Gestion des big data :</strong> PySpark · Kafka · HDFS · Docker<br>
+                    <strong>Source de données :</strong> Excel · CSV · JSON · MySQL · Oracle · PostgreSQL<br>
+                    <strong>Gestion de projet :</strong> GitHub · Scrum
                     </p>
                 </article>
 
@@ -209,10 +185,20 @@
                 </article>
             </div>
 
-            <div class="learning-section" style="margin-top: 3rem;">
-                <h3>Conclusion</h3>
-                <p>Ces trois années m'ont permis de développer une solide fondation en informatique, en mathématiques et en analyse de données. L'alternance a été un élément clé de ma formation, consolidant les apprentissages théoriques par l'application directe en entreprise. Au-delà des compétences techniques, j'ai appris qu'une solution réussie repose sur l'écoute des utilisateurs, la rigueur méthodologique et la capacité à s'adapter face à des défis complexes. Cette combinaison m'a convaincu que le terrain professionnel demeure le meilleur formateur pour développer des compétences durables et pertinentes.</p>
-            </div>
+        </div>
+    </section>
+
+    <section id="synthese" class="about">
+        <div class="about-content">
+            <h2>Ce que je retiens</h2>
+            <p>
+                Ces trois années m'ont permis d'acquérir de bonnes bases en informatique, en mathématiques et en analyse de données, mais également en gestion de projets et en présentation de résultats.
+                J'ai aussi appris à mieux m'organiser, à être plus rigoureuse et à m'adapter à des projets plus complexes et divers.
+                L'alternance a vraiment été un point important dans mon parcours, car elle m'a permis de mettre en pratique ce que j'apprenais en cours. Mais bien plus, j'ai appris un métier et tout un domaine dans lequel la donnée est bien présente, la Santé Prévoyance. 
+                Avec le recul, je retiens surtout que j'aime apprendre, progresser et travailler sur des projets concrets. <br>
+                Par ailleurs, cette alternance m’a appris à m’adapter à des problématiques variées. En effet, au sein de l’équipe, nous devons être capables de naviguer entre des gros projets et des missions ponctuelles, en alternant entre des tâches de programmation et d’autres plus statistiques. <br>
+                Pour finir, cette altenrance a confirmé mon appétence pour des métiers tels que chargés d’études statistiques, data analyst ou data scientist. 
+            </p>
         </div>
     </section>
 

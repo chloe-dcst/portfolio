@@ -1,6 +1,14 @@
 /* Style global */ 
+:root{ --header-offset: 50px; }
 html{
     scroll-behavior: smooth;
+    /* Ensure anchored scrolling accounts for the fixed header */
+    scroll-padding-top: var(--header-offset);
+}
+
+/* Reserve space so fixed header doesn't cover page content */
+body{
+    padding-top: var(--header-offset);
 }
 * {
     margin: 0;
@@ -157,16 +165,19 @@ span{
 
 ::-webkit-scrollbar-thumb{
     background-color: #003366;
+    border-radius: 50px;
 }
 
 ::-webkit-scrollbar-track{
     background-color: #4a6a8a;
     width: 50px;
+    border-radius: 50px;
 }
 
 /* style pour la page projets */
 .titre{
     margin-top: 115px;
+    margin-bottom: 30px;
     font-size: 50px;
     text-align: center;
     color: #003366;
@@ -190,12 +201,12 @@ span{
 }
 
 .titre nav{
-        margin-top: 20px;
-        width: 345px;
-        display: flex;
-        gap: 2em;
-        justify-content: center;
-    }
+    margin-top: 20px;
+    width: 345px;
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
 
 .btn-but{
     padding: 15px 28px;
@@ -213,6 +224,30 @@ span{
     display: inline-block; 
 }
 
+/* Buttons in the title keep their default sizing (no scoped flex rules applied) */
+
+/* Page-specific: make titre buttons flexible on the bilan page only */
+.page-bilan .titre nav{
+    width: 100%;
+    max-width: 900px;
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+    flex-wrap: nowrap; /* prefer single line */
+    align-items: center;
+}
+
+.page-bilan .titre nav .btn-but{
+    flex: 1 1 140px;
+    min-width: 120px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px){
+    .page-bilan .titre nav{ flex-wrap: wrap; }
+    .page-bilan .titre nav .btn-but{ flex: 1 1 120px; }
+}
+
 .btn-but:hover{
     background-color: #a8dadc;
     color: #003366;
@@ -228,13 +263,15 @@ span{
     gap: 2em;
     flex-wrap: wrap;
     scroll-margin-top: 80px;
-    width: 98%;
+    width: 100%;
+    max-width: 1330px;
     height: 98%;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin: 2.5rem auto 4rem auto;
     border-radius: 10px;
-    position: relative;
+    align-items: center;
 }
+
+
 section.work h2,
 .about-content h2 {
     color: #003366;
@@ -246,19 +283,21 @@ section.work h2,
     margin-bottom: 10px;
 }
 
-section.work a.retour{
+section.work a.retour,
+section.about a.retour{
     color: black;
     font-size: 16px;
     font-weight: bold;
     text-align: right;
     width: 100%;
     margin-top: 5px;
-    margin-bottom: 5px;
     border-bottom: none;
 }
 
 section.work a.retour:hover,
-section.work a.retour:active{
+section.work a.retour:active,
+section.about a.retour:hover,
+section.about a.retour:active{
     color: #003366;
     border-bottom: none;
     text-decoration: underline;
@@ -469,13 +508,12 @@ a.retour:active{
 
 /* Mise en page de la section des projets */
 .projets {
-    width:80%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
+    margin: 2.5rem auto 4rem auto;
     padding: 40px 0;
-    margin-top: 4rem; 
+    align-items: center;
 }
-
-
 
 .bulle-content {
     display: flex;
@@ -519,17 +557,22 @@ a.retour:active{
 
 /* page about */
 .about{
-    width:90%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
+    margin: 2.5rem auto 4rem auto;
     padding: 40px 0;
-    margin-top: 10px;
 }
 
 .about-content {
     background-color: #a8dadc;
-    padding: 30px;
+    padding: 18px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Harmonize index "En un coup d'oeil" horizontal spacing with .work sections */
+#en-coup-oeil .about-content {
+    padding: 30px 5%;
 }
 
 .about-image {
@@ -561,6 +604,12 @@ a.retour:active{
     color: #2c2c2c;
     margin-bottom: 20px;
     text-align: justify;
+}
+
+/* Synthèse spécifique : justification et interligne plus large */
+#synthese .about-content > p {
+    text-align: justify;
+    line-height: 1.9;
 }
 
 
@@ -668,4 +717,678 @@ a.retour:active{
 
 .btn-copier:hover {
     background-color: #0055aa;
+}
+
+/* ---- Styles spécifiques pour la page `bilan.html` ---- */
+.bilan {
+    width: 100%;
+    max-width: 1300px;
+    margin: 2.5rem auto 4rem auto;
+    margin-bottom: 70px;
+    color: #103a57;
+    font-size: 16px;
+}
+
+.bilan-hero{
+    display:flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.4rem;
+    .overview-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.2rem;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: start;
+        justify-items: stretch;
+        width: 100%;
+    }
+    color: #003366;
+    margin-bottom: 0.4rem;
+}
+.bilan-hero .lead{
+    color: #25495f;
+    margin-bottom: 1rem;
+}
+.bilan-hero-illustration{
+    font-size: 4.2rem;
+    opacity: 0.9;
+}
+
+.bilan-cards{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 0.6rem;
+    margin: 1rem 0;
+}
+
+.card{
+    background-color: #a8dadc;
+    border: #003366 3px solid;
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.8rem;
+    transition: transform 0.3s ease, background-color 0.2s ease-in-out;
+}
+
+.card-icon{
+    font-size: 2.2rem;
+    margin-bottom: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-icon img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+.card h3{ 
+    color: #003366; 
+    font-size: 1.2rem; 
+    margin:0; 
+    transition: color 0.3s ease;
+}
+
+.card p{ 
+    color: #003366; 
+    font-size: 0.95rem; 
+    line-height:1.5; 
+    margin:0;
+    text-align: justify;
+    transition: color 0.3s ease;
+}
+
+/* Classe utilitaire pour justifier des paragraphes ciblés */
+.justify {
+    text-align: justify;
+}
+
+/* Justification ciblée pour la card "Expérience" dans la section "En un coup d'œil" */
+#en-coup-oeil .bilan-cards article:nth-child(2) p {
+    text-align: justify;
+}
+.card:hover p {
+    color: #003366;
+}
+
+.bilan-timeline{
+    margin-top: 2.2rem;
+    background: transparent;
+}
+.bilan-timeline h2{ color:#003366; margin-bottom: 0.8rem }
+.bilan-timeline ol{
+    display:flex;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+.bilan-timeline ol li{
+    background: white;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(16,58,87,0.04);
+    flex: 1 1 0;
+    color: #25495f;
+    font-weight:500;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+    .bilan-cards{ grid-template-columns: repeat(2,1fr); }
+    .bilan-hero{ flex-direction:column; align-items:flex-start }
+    .bilan-hero-illustration{ align-self:flex-end }
+    body { padding-top: 120px; }
+}
+
+    @media (max-width: 700px){
+        .overview-cards { grid-template-columns: repeat(2,1fr) !important; }
+    }
+
+    @media (max-width: 420px){
+        .overview-cards { grid-template-columns: 1fr !important; }
+    }
+
+    /* Ensure 3 columns on medium+ screens */
+    @media (min-width: 701px){
+        .overview-cards { grid-template-columns: repeat(3,1fr) !important; }
+    }
+
+@media (max-width: 520px){
+    .bilan-cards{ grid-template-columns: 1fr; }
+    .bilan-hero-illustration{ font-size: 3rem }
+    .bilan-hero-inner h1{ font-size:1.5rem }
+}
+
+/* ===== AMÉLIORATION VISUELLE DES CARTES POUR BILAN.HTML ===== */
+.about-content .bilan-cards {
+    margin: 2.5rem 0 3rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Overview cards (top section) - use same layout as bottom bilan-cards */
+.overview-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2.5rem 0 3rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    align-items: start;
+}
+/* Make all overview cards equal-height */
+.overview-cards {
+    grid-auto-rows: 1fr;
+}
+.overview-cards .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.about-content .card {
+    background: linear-gradient(135deg, #a8dadc 0%, #d4f1f4 100%);
+    border: 2px solid #003366;
+    padding: 1.2rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(16, 58, 87, 0.08);
+    min-height: 140px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.about-content .card:hover {
+    transform: translateY(-8px);
+    border-color: #4a6a8a;
+    box-shadow: 0 12px 40px rgba(16, 58, 87, 0.15);
+    background: linear-gradient(135deg, #d4f1f4 0%, #a8dadc 100%);
+}
+
+.about-content .card-icon {
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.about-content .card h3 {
+    color: #003366;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+    letter-spacing: 0.3px;
+}
+
+.about-content .card p {
+    color: #2c2c2c;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+}
+
+.about-content .card:hover h3 {
+    color: #4a6a8a;
+}
+
+.about-content h2:first-of-type {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.about-content h2:not(:first-of-type) {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 36px;
+}
+
+.about-content h3:not(.card h3) {
+    color: #003366;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.about-content > p {
+    color: #2c2c2c;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+#synthese .about-content > p {
+    text-align: justify;
+    line-height: 1.9;
+}
+
+@media (max-width: 900px) {
+    .about-content .bilan-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 620px) {
+    .about-content .bilan-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content .card {
+        padding: 1.5rem 1.2rem;
+        min-height: 160px;
+    }
+}
+
+/* ===== TIMELINE HORIZONTAL STYLES ===== */
+.timeline-vertical {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2rem 0;
+}
+
+.timeline-vertical::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    background: linear-gradient(180deg, #a8dadc 0%, #4a6a8a 50%, #a8dadc 100%);
+    z-index: 0;
+}
+
+.timeline-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-step:hover .step-dot {
+    transform: scale(1.3);
+    background: #4a6a8a;
+}
+
+.timeline-step:hover .step-content {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-left {
+    justify-content: flex-end;
+    padding-right: 55%;
+}
+
+.timeline-right {
+    justify-content: flex-start;
+    padding-left: 55%;
+}
+
+.timeline-left .step-content {
+    text-align: right;
+    margin-right: 2rem;
+}
+
+.timeline-right .step-content {
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.step-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #a8dadc;
+    border: 3px solid #003366;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 8px rgba(168, 218, 220, 0.3);
+    transition: all 0.3s ease;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.step-content {
+    background: linear-gradient(135deg, #a8dadc 0%, #d4f1f4 100%);
+    border: 3px solid #003366;
+    border-radius: 12px;
+    padding: 1.45rem 1.55rem;
+    min-width: 250px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.step-content h4 {
+    color: #003366;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.step-content h4 span:first-child {
+    white-space: nowrap;
+}
+
+.step-content p {
+    color: #2c2c2c;
+    font-size: 0.95rem;
+    margin: 0.4rem 0;
+    font-weight: 500;
+}
+
+.step-content small {
+    color: #003366;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.chevron {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #003366;
+    opacity: 0;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.timeline-step:hover .chevron {
+    opacity: 1;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+/* Timeline vertical responsive */
+@media (max-width: 1024px) {
+    .timeline-left,
+    .timeline-right {
+        padding-left: 50%;
+        padding-right: 0;
+    }
+    
+    .timeline-left .step-content {
+        text-align: left;
+        margin-right: 0;
+        margin-left: 2rem;
+    }
+    
+    .step-content {
+        min-width: 230px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-vertical::before {
+        left: 20px;
+        transform: none;
+    }
+    
+    .timeline-step {
+        margin-bottom: 2.5rem;
+        padding-left: 80px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+    
+    .timeline-left,
+    .timeline-right {
+        padding-left: 80px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+    
+    .timeline-left .step-content,
+    .timeline-right .step-content {
+        text-align: left;
+        margin-right: 0;
+        margin-left: 2rem;
+    }
+    
+    .step-dot {
+        left: 0 !important;
+        transform: none;
+        position: absolute;
+    }
+    
+    .step-content {
+        min-width: 0;
+        width: min(100%, 320px);
+    }
+}
+
+/* ===== LEARNING SECTION STYLES ===== */
+.learning-section {
+    margin: 2.5rem 0;
+}
+
+.learning-section h3 {
+    color: #003366;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 2rem 0 1.5rem 0;
+    border-bottom: 2px solid #a8dadc;
+    padding-bottom: 0.8rem;
+}
+
+.learning-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.learning-item {
+    display: flex;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, #a8dadc 0%, #d4f1f4 100%);
+    padding: 1.3rem;
+    border-radius: 12px;
+    border: 3px solid #003366;
+    transition: all 0.3s ease;
+}
+
+.learning-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.15);
+    transform: translateY(-4px);
+}
+
+.learning-number {
+    color: #003366;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    min-width: 25px;
+    text-align: center;
+}
+
+.learning-text {
+    color: #2c2c2c;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.learning-text strong {
+    color: #003366;
+    font-weight: 600;
+}
+
+.learning-section > p {
+    color: #2c2c2c;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+    background: linear-gradient(135deg, #a8dadc 0%, #d4f1f4 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #003366;
+}
+
+@media (max-width: 768px) {
+    .learning-item {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+/* ===== MODAL BILAN STYLES ===== */
+.bilan-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.bilan-modal-content {
+    background: linear-gradient(135deg, #a8dadc 0%, #d4f1f4 100%);
+    border: 3px solid #003366;
+    border-radius: 15px;
+    padding: 2.5rem;
+    max-width: 700px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #003366;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #001a4d;
+    transform: rotate(90deg);
+}
+
+.bilan-detail {
+    color: #2c2c2c;
+}
+
+.bilan-detail h3 {
+    color: #003366;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 1.2rem 0;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 0.8rem;
+}
+
+.bilan-detail p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.bilan-detail p strong {
+    color: #003366;
+    font-weight: 600;
+}
+
+.bilan-detail ul {
+    margin: 1rem 0 1rem 2rem;
+    list-style: disc;
+}
+
+.bilan-detail ul li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0.6rem;
+    color: #2c2c2c;
+}
+
+/* Modal responsive */
+@media (max-width: 768px) {
+    .bilan-modal {
+        padding: 1rem;
+    }
+    
+    .bilan-modal-content {
+        padding: 1.5rem;
+        max-width: 95vw;
+    }
+    
+    .close-btn {
+        top: 1rem;
+        right: 1rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .bilan-detail h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Reduce scroll offset on small screens where header is smaller */
+@media (max-width: 520px) {
+    html {
+        scroll-padding-top: 90px;
+    }
 }

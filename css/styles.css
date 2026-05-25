@@ -1,8 +1,14 @@
 /* Style global */ 
+:root{ --header-offset: 50px; }
 html{
     scroll-behavior: smooth;
     /* Ensure anchored scrolling accounts for the fixed header */
-    scroll-padding-top: 120px;
+    scroll-padding-top: var(--header-offset);
+}
+
+/* Reserve space so fixed header doesn't cover page content */
+body{
+    padding-top: var(--header-offset);
 }
 * {
     margin: 0;
@@ -171,7 +177,7 @@ span{
 /* style pour la page projets */
 .titre{
     margin-top: 115px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     font-size: 50px;
     text-align: center;
     color: #003366;
@@ -257,13 +263,15 @@ span{
     gap: 2em;
     flex-wrap: wrap;
     scroll-margin-top: 80px;
-    width: 98%;
+    width: 100%;
+    max-width: 1330px;
     height: 98%;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin: 2.5rem auto 4rem auto;
     border-radius: 10px;
-    position: relative;
+    align-items: center;
 }
+
+
 section.work h2,
 .about-content h2 {
     color: #003366;
@@ -282,7 +290,6 @@ section.work a.retour{
     text-align: right;
     width: 100%;
     margin-top: 5px;
-    margin-bottom: 5px;
     border-bottom: none;
 }
 
@@ -498,13 +505,12 @@ a.retour:active{
 
 /* Mise en page de la section des projets */
 .projets {
-    width:80%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
+    margin: 2.5rem auto 4rem auto;
     padding: 40px 0;
-    margin-top: 4rem; 
+    align-items: center;
 }
-
-
 
 .bulle-content {
     display: flex;
@@ -548,10 +554,10 @@ a.retour:active{
 
 /* page about */
 .about{
-    width:90%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
+    margin: 2.5rem auto 4rem auto;
     padding: 40px 0;
-    margin-top: 10px;
 }
 
 .about-content {
@@ -707,9 +713,10 @@ a.retour:active{
 
 /* ---- Styles spécifiques pour la page `bilan.html` ---- */
 .bilan {
-    width: 92%;
-    max-width: 1100px;
+    width: 100%;
+    max-width: 1300px;
     margin: 2.5rem auto 4rem auto;
+    margin-bottom: 70px;
     color: #103a57;
     font-size: 16px;
 }

@@ -1,5 +1,5 @@
 /* Style global */ 
-:root{ --header-offset: 50px; }
+:root{ --header-offset: 30px; }
 html{
     scroll-behavior: smooth;
     /* Ensure anchored scrolling accounts for the fixed header */

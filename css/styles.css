@@ -945,6 +945,65 @@ a.retour:active{
     color: #4a6a8a;
 }
 
+.about-section-hero {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 0.8rem 0;
+}
+
+.about-section-body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.about-section-hero .about-image {
+    width: 220px;
+    flex: 0 0 220px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 6px 16px rgba(16, 58, 87, 0.06);
+}
+
+/* Center the hero inner block and keep title centered */
+.about-section-title,
+.about-section h2 {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+.about-section-hero-inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.about-section-hero-inner .about-section-body {
+    max-width: 640px;
+    text-align: left;
+}
+
+.about-section-body h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+    color: #003366;
+}
+
+.about-section-body p {
+    color: #2c2c2c;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+/* Espace vertical entre les sections de la page A propos */
+.about-section + .about-section {
+    margin-top: 3rem;
+}
+
+.about-section .values-intro {
+    margin-bottom: 1rem;
+}
+
 .about-content h2:first-of-type {
     margin-top: 0;
     margin-bottom: 1.5rem;
@@ -970,6 +1029,69 @@ a.retour:active{
     line-height: 1.7;
     text-align: left;
     margin-bottom: 1.2rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: none;
+    margin-top: 1rem;
+}
+
+.value-card {
+    width: 100%;
+    background-color: #a8dadc;
+    border: #003366 3px solid;
+    padding: 0.7rem 0.55rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.2s ease-in-out;
+}
+
+.value-card:hover {
+    transform: translateY(-3px);
+    background: #d4f1f4;
+}
+
+.value-card h3 {
+    color: #003366;
+    font-size: 0.7rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-section-hero {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .about-section-hero .about-image {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 620px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-card {
+        min-height: 76px;
+    }
 }
 
 #synthese .about-content > p {

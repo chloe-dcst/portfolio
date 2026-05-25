@@ -24,3 +24,15 @@ function copierAdresse() {
         });
     }
 }
+
+/* Fonctions pour le modal Bilan */
+function afficherBilan(annee) {
+    const details = document.querySelectorAll('.bilan-detail');
+    details.forEach(detail => detail.style.display = 'none');
+    document.getElementById(annee).style.display = 'block';
+    document.getElementById('bilanModal').style.display = 'flex';
+}
+
+function fermerBilan() {
+    document.getElementById('bilanModal').style.display = 'none';
+}

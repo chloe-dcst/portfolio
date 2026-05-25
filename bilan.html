@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilan — Mon Parcours</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body class="page-bilan">
+
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+
+        <nav class="navbar">
+            <a href="index.html">Accueil</a>
+            <a href="projets.html">Mes projets</a>
+            <a href="bilan.html">Mon Parcours</a>
+            <a href="about.html">À propos de moi</a>
+        </nav>
+    </header>
+
+    <div class="titre">
+        <u>Mon bilan — Parcours & compétences</u>
+        <p>Une vue d'ensemble de ma formation, expérience et compétences</p>
+        <nav>
+            <button class="btn-but" onclick="location.href='#en-coup-oeil'">En un coup d'œil</button>
+            <button class="btn-but" onclick="location.href='#chronologie'">Chronologie</button>
+            <button class="btn-but" onclick="location.href='#ce-que-appris'">Ce que j'ai appris</button>
+            <button class="btn-but" onclick="location.href='#synthese'">Ce que je retiens</button>
+        </nav>
+    </div>
+
+    <!-- Section 1: En un coup d'œil -->
+    <section id="en-coup-oeil" class="bilan">
+        <div class="about-content">
+            <h2>En un coup d'œil</h2>
+            
+            <div class="bilan-cards overview-cards">
+                <article class="card">
+                    <h3>Formation</h3>
+                    <p>Bachelor Universitaire de Technologie en Science des Données — parcours Visualisation et Conception d'Outils Décisionnels (VCOD) en alternance.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Expérience</h3>
+                    <p><strong>Alternance chez Covéa</strong> depuis 2024, Technicienne en études et reporting au sein de l'équipe Pilotage de la Direction Santé Prévoyance. <br>
+                         <strong>Mission :</strong> <br>
+                         &bull; Réalisation d'études statisitques <br>
+                         &bull; Création de tableaux de bord <br> 
+                         &bull; Construction d'outil d'aide à la décision <br>
+                         &bull; Maintenance des programmes et des rapports
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Compétences clés</h3>
+                    <p><strong>Techniques :</strong> SQL · VBA · Excel · SAS · SAS VA · Python<br>
+                        <br>
+                    <strong>Qualités :</strong> Rigueur · Autonomie · Communication · Esprit d'équipe · Organisation · Analyse · Adaptabilité </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Chronologie du parcours -->
+    <section id="chronologie" class="bilan">
+        <div class="about-content">
+            <h2>Chronologie du parcours</h2>
+            
+            <div class="timeline-vertical">
+                <div class="timeline-step timeline-left" onclick="afficherBilan('bac')">
+                    <div class="step-content">
+                        <h4><span>2023</span><span class="chevron">▼</span></h4>
+                        <p>Baccalauréat Général</p>
+                        <small>Mention assez bien</small>
+                    </div>
+                    <div class="step-dot"></div>
+                </div>
+
+                <div class="timeline-step timeline-right" onclick="afficherBilan('annee1')">
+                    <div class="step-dot"></div>
+                    <div class="step-content">
+                        <h4><span>2023-2024 (BUT1)</span><span class="chevron">▼</span></h4>
+                        <p>BUT Science des Données</p>
+                        <small>Excellents résultats</small>
+                    </div>
+                </div>
+
+                <div class="timeline-step timeline-left" onclick="afficherBilan('annee2')">
+                    <div class="step-content">
+                        <h4><span>2024-2025 (BUT2)</span><span class="chevron">▼</span></h4>
+                        <p>Spécialité VCOD</p>
+                        <small>+ Alternance Covéa</small>
+                    </div>
+                    <div class="step-dot"></div>
+                </div>
+
+                <div class="timeline-step timeline-right" onclick="afficherBilan('annee3')">
+                    <div class="step-dot"></div>
+                    <div class="step-content">
+                        <h4><span>2025-2026 (BUT3)</span><span class="chevron">▼</span></h4>
+                        <p>Obtention du diplôme</p>
+                        <small>+ Continuation chez Covéa</small>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Modal Bilan -->
+            <div id="bilanModal" class="bilan-modal" onclick="fermerBilan()">
+                <div class="bilan-modal-content" onclick="event.stopPropagation()">
+                    <button class="close-btn" onclick="fermerBilan()">&times;</button>
+                    
+                    <div id="bac" class="bilan-detail" style="display:none;">
+                        <h3>2023 — Baccalauréat Général</h3>
+                        <p>Obtention du baccalauréat général <strong>mention assez bien</strong> avec les spécialités : Mathématiques et Science de l'Ingénieur. <br>
+                        En Première, ma troisième spécialité était Histoire-Géographie, Géopolitique et Sciences Politiques (HGGSP). J'ai choisi de ne pas la poursuivre en Terminale, d'une part parce qu'elle représentait une plus grande difficulté pour moi, et d'autre part parce que je souhaitais orienter mes études vers un parcours scientifique, et plus particulièrement vers les mathématiques.
+                        Cependant, elle m'a permis <strong>d'acquérir des qualités de rédaction et de réflexion qui me servent encore aujourd'hui</strong>.
+                    </p>
+                    </div>
+
+                    <div id="annee1" class="bilan-detail" style="display:none;">
+                        <h3>2023-2024 (BUT1) — BUT Science des Données</h3>
+                        <p>
+                            <p>Cette première année <strong>s'est très bien passée</strong> dans l'ensemble. Je suis très <strong>satisfaite d'avoir choisi cette formation</strong> pour mes études supérieures, que ce soit pour le contenu des cours, l'ambiance de la promotion ou mes résultats. J'apprécie particulièrement de pouvoir mettre en pratique les notions théoriques à travers des projets concrets.</p>
+                            <p>Concernant mes résultats, j'en suis globalement satisfaite et même fière pour la partie informatique : <strong>ils sont très bons, alors que je n'avais jamais fait de programmation avant cette année</strong>. Toutefois, je reconnais avoir manqué de rigueur lors des derniers examens. J'ai eu du mal à concilier le rendu des projets et les révisions, ce qui m'a amenée à passer un contrôle en ayant trop peu révisé. C'est un point sur lequel je dois travailler afin de mieux gérer mon organisation à l'avenir.</p>
+                            <br>
+                            <p>En conclusion, cette première année m'a permis de <strong>construire des bases solides en informatique et en programmation</strong>, tout en approfondissant mes compétences en mathématiques. Elle m'a aussi permis de <strong>découvrir de nouveaux domaines comme la gestion, l'économie ou la communication</strong>. J'aborde mes deux prochaines années avec la ferme intention de continuer sur cette lancée.</p>
+                        </p>
+                    </div>
+
+                    <div id="annee2" class="bilan-detail" style="display:none;">
+                        <h3>2024-2025 (BUT2) — Spécialité VCOD + Alternance</h3>
+                        <p>Pour cette deuxième année en BUT Science des Données, j'ai choisi de m'orienter vers le parcours <strong>VCOD (Visualisation et Conception d’Outils Décisionnels)</strong>, plutôt que le parcours EMS, car je suis particulièrement attirée par la valorisation visuelle des données et le décisionnel. C'est également cette année que j'ai fait le choix de <strong>poursuivre ma formation en alternance</strong>.</p>
+                        <p>J'effectue celle-ci au sein du <strong>groupe Covéa</strong>, au sein de l'équipe Pilotage Opérationnel de la direction Santé Prévoyance. Ma mission principale est la création de tableaux de bord pour le suivi d'activité des équipes métiers. Le bilan de cette année est extrêmement positif.</p>
+                        <p>Sur le plan académique, j'ai su surmonter le rythme intense des examens et des livrables de projets sans rencontrer de difficultés majeures. Ma principale réussite a été de trouver un équilibre entre le travail scolaire et le rythme de l'entreprise, une transition qui me faisait pourtant appréhender en début d'année. Du côté professionnel, l'alternance s'est révélée être un choix payant : j'ai pu appliquer concrètement mes connaissances théoriques, découvrir la vie d'entreprise et <strong>monter en compétences tant sur le plan technique qu'humain</strong>.</p>
+                        <br>
+                        <p>Alors que j'aborde ma dernière année de BUT avec enthousiasme, ce parcours m'amène à réfléchir à la suite de mes études. Je souhaite aujourd'hui <strong>poursuivre vers un Master</strong> pour approfondir mon expertise. Si le domaine reste encore à affiner, une certitude demeure : je réaliserai ce cursus <strong>en alternance</strong>, tant cette expérience sur le terrain me semble être la méthode d'apprentissage la plus formatrice.</p>
+                    </div>
+
+                    <div id="annee3" class="bilan-detail" style="display:none;">
+                        <h3>2025-2026 (BUT3) — Fin du BUT + 2ème année d'alternance</h3>
+                        <p>Cette troisième et dernière année de BUT, que j'ai bien évidemment <strong> en alternance</strong> au sein de l'équipe Pilotage de la DSP du groupe Covéa, s'est déroulée avec autant de succès que les précédentes. Sur le plan académique, j'ai approfondi mes connaissances, principalement en <strong> learning, en développement web et en conception d'indicateurs</strong>. J'ai également renforcé mes compétences en gestion de projet, en organisation et en aisance communicationnelle lors des présentations.</p>
+                        <p>En entreprise, cette année a été marquée par une forte montée en compétences métier grâce à ma participation à un projet d'envergure : la <strong>conception d'un tableau de bord global</strong> pour le suivi de l'ensemble de l'activité back-office de la Santé Individuelle. Ce projet m'a fait prendre conscience de l'importance cruciale de la phase d'expression des besoins, du choix des termes dans les rapports et de la communication pour que l'outil réponde parfaitement aux attentes des utilisateurs.</p>
+                        <p>Par ailleurs, la mission OKKO (détaillée dans la partie projets) m'a permis de développer une réelle expertise en <strong>débogage et en environnement SAS</strong> Ce sujet d'envergure m'a appris à travailler en <strong>parfaite autonomie</strong> sans cahier des charges rigide, me laissant la liberté de proposer mes propres idées. Face à des problématiques techniques nouvelles où tout restait à construire, j'ai mené mes propres recherches pour identifier les solutions faisables, avec pour objectif constant de livrer un outil simple, ergonomique et pratique.</p>
+                        <p>Pour la suite, je souhaite poursuivre mon parcours en Master, avec l'objectif d'intégrer le <strong>Master MIASHS à Angers</strong>. Je souhaite effectuer ce Master en alternance et j'ai la possibilité de continuer au sein de mon équipe chez Covéa, qui me propose de poursuivre l'aventure avec eux.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Ce que j'ai appris -->
+    <section id="ce-que-appris" class="bilan">
+        <div class="about-content">
+            <h2>Ce que j'ai appris</h2>
+
+            <div class="bilan-cards">
+                <article class="card">
+                    <h3>Compétences techniques</h3>
+                    <p><strong>Langages de programmation :</strong> Python · VBA · SQL · R · SAS · NoSQL (MongoBD)<br>
+                    <strong>Developpement web :</strong> HTML · CSS · JavaScript · PHP · Streamlit <br>
+                    <strong>Logiciel de datavisualisation :</strong> Power BI · Qlik · Tableau · SAS VA · BO · QGIS <br>
+                    <strong>Gestion des big data :</strong> PySpark · Kafka · HDFS · Docker<br>
+                    <strong>Source de données :</strong> Excel · CSV · JSON · MySQL · Oracle · PostgreSQL<br>
+                    <strong>Gestion de projet :</strong> GitHub · Scrum
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Acquis professionnels</h3>
+                    <p><strong>Communication & relationnel :</strong> Communication · Écoute · Sens du contact · Pédagogie<br>
+                    <strong>Organisation & autonomie :</strong> Autonomie · Organisation · Gestion des délais · Persévérance<br>
+                    <strong>Analyse & méthode :</strong> Esprit d'analyse · Rigueur · Respect du cahier des charges · Gestion des contraintes<br>
+                    <strong>Réactivité & résistance au stress :</strong> Réactivité · Gestion du stress · Rapidité d'exécution · Adaptabilité<br>
+                    <strong>Créativité & résolution :</strong> Créativité</p>
+                </article>
+
+                <article class="card">
+                    <h3>Missions réalisables</h3>
+                    <p>
+                        &bull; Concevoir et maintenir des tableaux de bord<br>
+                        &bull; Automatiser des rapports et pipelines de données<br>
+                        &bull; Nettoyer, transformer et migrer des jeux de données<br>
+                        &bull; Développer des outils ou interfaces web simples<br>
+                        &bull; Concevoir des indicateurs et rapports métier (recueil des besoins → livraison)<br>
+                        &bull; Déployer des solutions conteneurisées simples<br>
+                        &bull; Rédiger documentation, cahiers de recettes et rapports d'analyse<br>
+                    </p>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="synthese" class="bilan">
+        <div class="about-content">
+            <h2>Ce que je retiens</h2>
+            <p>
+                Ces trois années m'ont permis d'acquérir de bonnes bases en informatique, en mathématiques et en analyse de données, mais également en gestion de projets et en présentation de résultats.
+                J'ai aussi appris à mieux m'organiser, à être plus rigoureuse et à m'adapter à des projets plus complexes et divers.
+                L'alternance a vraiment été un point important dans mon parcours, car elle m'a permis de mettre en pratique ce que j'apprenais en cours. Mais bien plus, j'ai appris un métier et tout un domaine dans lequel la donnée est bien présente, la Santé Prévoyance. 
+                Avec le recul, je retiens surtout que j'aime apprendre, progresser et travailler sur des projets concrets. <br>
+                Par ailleurs, cette alternance m’a appris à m’adapter à des problématiques variées. En effet, au sein de l’équipe, nous devons être capables de naviguer entre des gros projets et des missions ponctuelles, en alternant entre des tâches de programmation et d’autres plus statistiques. <br>
+                Pour finir, cette altenrance a confirmé mon appétence pour des métiers tels que chargés d’études statistiques, data analyst ou data scientist. 
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <ul class="list">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projets.html">Mes projets</a></li>
+                <li><a href="bilan.html">Mon Parcours</a></li>
+                <li><a href="about.html">A propos de moi</a></li>
+            </ul>
+    
+            <div class="social">   
+                <a href="javascript:void(0);" onclick="ouvrirPopup()">
+                    <img class="social-icon" src="assets/photo/mail.png" alt="mail">
+                </a>
+
+                <div id="popupMail" class="mail-overlay" onclick="fermerPopup()">
+                    <div class="mail-content" onclick="event.stopPropagation()">
+                        <p id="monEmail" style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px;">chloedecoust@gmail.com</p>
+                        <button class="btn-copier" onclick="copierAdresse()">Copier l'adresse</button>
+                        <p id="msgConfirmation" style="display:none; color: #28a745; margin-top: 10px; font-size: 0.9em;">Copié !</p>
+                    </div>
+                </div>
+                
+                <a href="https://www.facebook.com/profile.php?id=61554652330017">
+                    <img class="social-icon" src="assets/photo/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/chloe-decoust-333207294">
+                    <img class="social-icon" src="assets/photo/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    
+        <div class="copyright">
+            &copy; 2026 Chloé Découst.
+        </div>
+    </footer>
+
+</body>
+</html> 

@@ -283,7 +283,8 @@ section.work h2,
     margin-bottom: 10px;
 }
 
-section.work a.retour{
+section.work a.retour,
+section.about a.retour{
     color: black;
     font-size: 16px;
     font-weight: bold;
@@ -294,7 +295,9 @@ section.work a.retour{
 }
 
 section.work a.retour:hover,
-section.work a.retour:active{
+section.work a.retour:active,
+section.about a.retour:hover,
+section.about a.retour:active{
     color: #003366;
     border-bottom: none;
     text-decoration: underline;
@@ -565,6 +568,11 @@ a.retour:active{
     padding: 18px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Harmonize index "En un coup d'oeil" horizontal spacing with .work sections */
+#en-coup-oeil .about-content {
+    padding: 30px 5%;
 }
 
 .about-image {

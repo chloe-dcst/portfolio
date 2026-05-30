@@ -36,3 +36,17 @@ function afficherBilan(annee) {
 function fermerBilan() {
     document.getElementById('bilanModal').style.display = 'none';
 }
+
+/* Scroll Animation Observer */
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    const animatedElements = document.querySelectorAll('.animate-element');
+    animatedElements.forEach(el => observer.observe(el));
+});

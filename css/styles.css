@@ -3,7 +3,7 @@
 html{
     scroll-behavior: smooth;
     /* Ensure anchored scrolling accounts for the fixed header */
-    scroll-padding-top: var(--header-offset);
+    scroll-padding-top: 120px; /* Force l'espace même si on scrolle */
 }
 
 /* Reserve space so fixed header doesn't cover page content */
@@ -226,8 +226,9 @@ span{
 
 /* Buttons in the title keep their default sizing (no scoped flex rules applied) */
 
-/* Page-specific: make titre buttons flexible on the bilan page only */
-.page-bilan .titre nav{
+/* Page-specific: make titre buttons flexible on the bilan and about pages */
+.page-bilan .titre nav,
+.page-about .titre nav {
     width: 100%;
     max-width: 900px;
     display:flex;
@@ -237,15 +238,18 @@ span{
     align-items: center;
 }
 
-.page-bilan .titre nav .btn-but{
+.page-bilan .titre nav .btn-but,
+.page-about .titre nav .btn-but {
     flex: 1 1 140px;
     min-width: 120px;
     box-sizing: border-box;
 }
 
 @media (max-width: 900px){
-    .page-bilan .titre nav{ flex-wrap: wrap; }
-    .page-bilan .titre nav .btn-but{ flex: 1 1 120px; }
+    .page-bilan .titre nav,
+    .page-about .titre nav { flex-wrap: wrap; }
+    .page-bilan .titre nav .btn-but,
+    .page-about .titre nav .btn-but { flex: 1 1 120px; }
 }
 
 .btn-but:hover{
@@ -258,8 +262,7 @@ span{
     display: flex;
     padding: 30px 5%;
     background: #a8dadc;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 4rem auto;
     gap: 2em;
     flex-wrap: wrap;
     scroll-margin-top: 80px;
@@ -284,12 +287,14 @@ section.work h2,
 }
 
 section.work a.retour,
-section.about a.retour{
+section.about a.retour,
+section.bilan a.retour {
     color: black;
     font-size: 16px;
     font-weight: bold;
     text-align: right;
     width: 100%;
+    display: inline-block;
     margin-top: 5px;
     border-bottom: none;
 }
@@ -297,7 +302,9 @@ section.about a.retour{
 section.work a.retour:hover,
 section.work a.retour:active,
 section.about a.retour:hover,
-section.about a.retour:active{
+section.about a.retour:active,
+section.bilan a.retour:hover,
+section.bilan a.retour:active {
     color: #003366;
     border-bottom: none;
     text-decoration: underline;
@@ -559,8 +566,8 @@ a.retour:active{
 .about{
     width: 100%;
     max-width: 1300px;
-    margin: 2.5rem auto 4rem auto;
-    padding: 40px 0;
+    margin: 4rem auto;
+    padding: 0;
 }
 
 .about-content {
@@ -945,6 +952,67 @@ a.retour:active{
     color: #4a6a8a;
 }
 
+.about-section-hero {
+    padding: 0.8rem 0;
+    width: 100%;
+}
+
+.about-section-body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.about-section-hero .about-image {
+    width: 420px;
+    flex: 0 0 370px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 6px 16px rgba(16, 58, 87, 0.06);
+}
+
+/* Center the hero inner block and keep title centered */
+.about-section-title,
+.about-section h2 {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+.about-section-hero-inner {
+    display: flex;
+    justify-content: space-between; /* changed from center to take full width */
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.about-section-hero-inner .about-section-body {
+    flex: 1; /* take remaining space */
+    text-align: left;
+}
+
+.about-section-body h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+    color: #003366;
+}
+
+.about-section-body p {
+    color: #2c2c2c;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+.about-section {
+    scroll-margin-top: 120px;
+}
+
+/* Espace vertical entre les sections de la page A propos */
+.about-section + .about-section {
+    margin-top: 3rem;
+}
+
+.about-section .values-intro {
+    margin-bottom: 1rem;
+}
+
 .about-content h2:first-of-type {
     margin-top: 0;
     margin-bottom: 1.5rem;
@@ -970,6 +1038,62 @@ a.retour:active{
     line-height: 1.7;
     text-align: left;
     margin-bottom: 1.2rem;
+}
+
+.values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem; /* card spacing */
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.value-card {
+    flex: 1 1 180px;
+    max-width: 260px;
+    background-color: #a8dadc;
+    border: #003366 3px solid;
+    padding: 0.7rem 0.55rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.2s ease-in-out;
+}
+
+.value-card:hover {
+    transform: translateY(-3px);
+    background: #d4f1f4;
+}
+
+.value-card h3 {
+    color: #003366;
+    font-size: 0.7rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+    .about-section-hero {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .about-section-hero .about-image {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 620px) {
+    .value-card {
+        min-height: 76px;
+    }
 }
 
 #synthese .about-content > p {
@@ -1390,5 +1514,98 @@ a.retour:active{
 @media (max-width: 520px) {
     html {
         scroll-padding-top: 90px;
+    }
+}
+
+/* ===== Scroll Animations ===== */
+.animate-element {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-element.visible {
+    animation: fadeInUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.delay-1.visible { animation-delay: 0.1s; }
+.delay-2.visible { animation-delay: 0.2s; }
+.delay-3.visible { animation-delay: 0.3s; }
+.delay-4.visible { animation-delay: 0.4s; }
+.delay-5.visible { animation-delay: 0.5s; }
+
+/* ===== Investissement Grid ===== */
+.investissement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.investissement-card {
+    background-color: #a8dadc;
+    border: 2px solid #003366;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.investissement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 51, 102, 0.15);
+    border-color: #4a6a8a;
+}
+
+.investissement-card h3 {
+    color: #003366;
+    font-size: 1.15rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #003366;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.investissement-card p {
+    color: #2c2c2c;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: justify;
+}
+
+.investissement-conclusion,
+.intro-highlight {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color: #003366;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.investissement-conclusion {
+    margin-top: 2rem;
+}
+
+.intro-highlight {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+    .investissement-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
     }
 }

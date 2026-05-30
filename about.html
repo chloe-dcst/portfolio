@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chloé Découst | A propos de moi</title>
+    <title>Chloé Découst | À propos de moi</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="assets/js/script.js" defer></script>
 </head>
 
-<body>
+<body class="page-about">
 
     <header class="header">
-         <a href="#" class="logo" >Portfolio</a>
+         <a href="#" class="logo">Portfolio</a>
 
         <nav class="navbar">
             <a href="index.html">Accueil</a>
@@ -19,46 +19,124 @@
             <a href="bilan.html">Mon Parcours</a>
             <a href="about.html">À propos de moi</a>
         </nav>
-    
     </header>
 
-    <div class="titre">
-        <u>A propos de moi</u>
-        <p>Pour en savoir plus sur moi !</p>
+    <div class="titre animate-element">
+        <u>À propos de moi</u>
+        <p>Pour en savoir plus sur qui je suis !</p>
+        <nav>
+            <button class="btn-but" onclick="location.href='#introduction'">En quelques mots</button>
+            <button class="btn-but" onclick="location.href='#valeurs'">Mes valeurs</button>
+            <button class="btn-but" onclick="location.href='#passion'">Ma passion</button>
+            <button class="btn-but" onclick="location.href='#investissement'">Ma motivation</button>
+        </nav>
     </div>
-    <section class="about">
-        <div class="about-content">
-          
-            <img src="assets/photo/basket.jpg" alt="joue au basket"  class="about-image">
-          
-            <h2>Le basket-ball</h2>
-            <p>
-                Je pratique le basket-ball depuis l'âge de 6 ans au sein du Basket Club de Chauray (BCC). J'ai débuté à l'école de mini basket et 
-                aujourd'hui, je joue en tant que senior. J'ai évolué à un niveau régional et départemental tout au long de ces années. Je pratique 
-                ce sport à une fréquence d'environ 3h à 4h30 d'entraînements par semaine plus un ou deux matchs par week-end. En plus de cela, il m'arrive d'être 
-                arbitre et ou de devoir faire la table, c'est-à-dire être marqueuse ou chronométreuse. Pratiquer ce sport depuis que je suis 
-                petite m'a permis d'apprendre la rigueur et la persévérance. Il m'a aussi fait travailler la patience parce qu'on ne peut pas 
-                arriver à tout du premier coup ainsi que le fait de travailler en équipe parce que pour arriver à quelque chose on est plus fort à 
-                plusieurs et surtout lors de la pratique d'un sport collectif. De plus, le fait de faire de l'arbitrage, cela m'a permis en 
-                grandissant de prendre un peu plus confiance en moi et de prendre de l'assurance pour mes choix. 
-            </p>    
 
-            <h2>Ma motivation</h2>
-            <p>
-                Je me considère comme quelqu'un de motivée et investie dans ce que j'entreprends. Que ce soit dans mes études, dans mes activités sportives
-                ou dans mes expériences de job étudiant, j'aime m'impliquer sur la durée et apprendre de nouvelles choses. Ces expériences m'ont appris à
-                m'adapter, à rester sérieuse et à garder le cap même quand il faut concilier plusieurs responsabilités en même temps.
-            </p>
-            
+    <section class="about">
+
+        <!-- NOUVELLE SECTION : Introduction globale avec son titre -->
+        <section id="introduction" class="about-section about-intro-top animate-element">
+            <div class="about-content">
+                <h2>En quelques mots...</h2>
+                <p class="intro-highlight">
+                    Je me considère comme une fille simple, qui aime les choses simples.
+                </p>
+                <p class="lead-text">
+                    J'aime donner le meilleur de moi-même dans tout ce que j'entreprends pour rendre fier mes proches. C'est cette envie de progresser qui me rend perfectionniste, tant dans mes études que sur un terrain de sport.<br>
+                    J'apprécie me ressourcer en pleine nature et notemment en montagne afin de déconnecter des écrans très présent dans la vie quotidienne. <br>
+                    J'aime également profiter de ma famille et de mes amis en faisant des choses très simple comme des jeux de société ou une bonne pétanque.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION VALEURS : Déplacée ici pour une transition logique après l'intro -->
+        <section id="valeurs" class="about-section animate-element delay-1">
+            <div class="about-content">
+                <h2>Mes valeurs</h2>
+                <p class="values-intro">
+                    Ce qui me définit le plus, ce sont des valeurs simples mais essentielles, qui me viennent de ma famille et de ma pratique du sport. Je suis une personne authentique, qui apprécie tout particulièrement les choses simples et les moments partagés avec mes proches et mes amis.
+                    Très dynamique, j'ai un vrai besoin de bouger et de me dépenser au quotidien. Le sport occupe une place centrale dans ma vie, que ce soit à travers mon engagement en club ou simplement pour le plaisir de rester active. C’est aussi pour cela que j'aime m'évader en pleine nature dès que possible, notamment pour faire de la randonnée en montagne, un environnement idéal pour déconnecter des écrans.
+                </p>
+
+                <div class="values-grid">
+                    <article class="value-card animate-element delay-1">
+                        <h3>🌟 Bienveillance</h3>
+                    </article>
+                    <article class="value-card animate-element delay-2">
+                        <h3>🤝 Respect</h3>
+                    </article>
+                    <article class="value-card animate-element delay-4">
+                        <h3>🤲 Entraide</h3>
+                    </article>
+                    <article class="value-card animate-element delay-5">
+                        <h3>⚖️ Justice</h3>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION BASKET : Illustre directement tes valeurs de sport -->
+        <section id="passion" class="about-section about-section-hero animate-element delay-2">
+            <div class="about-content">
+                <h2>Le basket, une passion depuis toute petite</h2>
+                <div class="about-section-hero-inner">
+                    <img src="assets/photo/basket.jpg" alt="Chloé jouant au basket" class="about-image">
+                    <div class="about-section-body">
+                    <p>
+                        Je pratique le basket-ball depuis l'âge de 6 ans au Basket Club de Chauray. Après avoir commencé à l'école de mini-basket, j'évolue aujourd'hui en senior au poste de meneuse. Ce sport m'a inculqué la rigueur, la persévérance et l'esprit d'équipe. Il m'a également permis de prendre confiance en moi, notamment grâce à l'arbitrage et à la tenue de la table de marque que j'effectue bénévolement.
+                    </p>
+                    <p>
+                        L'arbitrage m'a appris à prendre des décisions rapides, à m'affirmer et à rester concentrée, même sous pression. On m'a d'ailleurs proposé de suivre la formation pour devenir arbitre officielle. J'ai temporairement décliné cette opportunité afin de me concentrer pleinement sur mes études, le rythme (un week-end par mois minimum en plus des matchs et du travail personnel) étant difficile à concilier avec mon organisation actuelle. Pour autant, je garde l'ambition de passer cette formation dans les années à venir. Très investie, je consacre entre 3h et 4h30 par semaine au basket, complétées par 2 à 3 séances de sport à la salle de sport.
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION INVESTISSEMENT : Recentrée sur le pro, sans les doublons -->
+        <section id="investissement" class="about-section animate-element delay-1">
+    <div class="about-content">
+        <h2>Mon investissement et ma motivation</h2>
+        
+        <div class="investissement-grid">
+            <article class="investissement-card">
+                <h3>🏀 L'école du sport</h3>
+                <p>
+                    Je pense être quelqu'un de motivé de par mes activités sportives dans lesquelles j'ai appris à ne jamais rien lâcher, à progresser et à continuer d'apprendre de nouvelles choses. En parallèle de mes études, j'ai toujours cherché à m'investir dans des expériences concrètes.
+                </p>
+            </article>
+
+            <article class="investissement-card">
+                <h3>💼 Premiers pas</h3>
+                <p>
+                    Ma motivation se démontre notamment par le fait d'avoir commencé à travailler jeune. J'ai participé au dispositif "Argent de poche" de ma commune entre mes 16 et 18 ans, ce qui m'a permis de m'impliquer dans des missions utiles tout en gagnant en responsabilités.
+                </p>
+            </article>
+
+            <article class="investissement-card">
+                <h3>🤝 Jobs étudiants</h3>
+                <p>
+                    De la restauration rapide à l'assistance téléphonique, ces expériences dans des domaines opposés m'ont appris ce qu'est le travail. J'y ai développé mon autonomie, mon organisation et mon sérieux.
+                </p>
+            </article>
         </div>
+
+        <!-- AJOUT : Une conclusion simple et pro sous la grille pour fermer la section -->
+        <p class="investissement-conclusion">
+            Toutes ces expériences ont forgé mon sens de l'engagement et mon adaptabilité. Elles renforcent aujourd'hui ma volonté de m'investir pleinement et durablement dans mes futurs projets, que ce soit sur le terrain ou en entreprise.
+        </p>
+    </div>
+</section>
+
     </section>
+
     <footer class="footer">
         <div class="footer-content">
             <ul class="list">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="projets.html">Mes projets</a></li>
                 <li><a href="bilan.html">Mon Parcours</a></li>
-                <li><a href="about.html">A propos de moi</a></li>
+                <li><a href="about.html">À propos de moi</a></li>
             </ul>
     
             <div class="social">   
@@ -87,7 +165,6 @@
             &copy; 2026 Chloé Découst.
         </div>
     </footer>
-    
 
 </body>
 </html>

@@ -114,21 +114,24 @@
                     <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; <strong>Difficultés techniques :</strong> <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - La gestion du transfert des fichiers CTRLM et des logs d'un environnement Windows vers UNIX : les fichiers étaient rangés dans des sous-dossiers 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nommés par batch et par date. La commande "copy-file" ne permet pas de sélectionner les dossiers, mais uniquement les fichiers. Il a donc fallu 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;une alternative pour rapatrier tous les fichiers nécessaires dans un dossier unique. Avec l'aide d'un collègue, nous avons mis en place un programme
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PowerShell qui copie-colle les fichiers en les renommant (nom du batch + nom d'origine). Cela a permis de tout centraliser dans un seul répertoire,
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;facilitant ainsi grandement l'importation vers l'environnement UNIX. <br>
+                    nommés par batch et par date. La commande "copy-file" ne permet pas de sélectionner les dossiers, mais uniquement les fichiers. Il a donc fallu 
+                    une alternative pour rapatrier tous les fichiers nécessaires dans un dossier unique. Avec l'aide d'un collègue, nous avons mis en place un programme
+                    PowerShell qui copie-colle les fichiers en les renommant (nom du batch + nom d'origine). Cela a permis de tout centraliser dans un seul répertoire,
+                    facilitant ainsi grandement l'importation vers l'environnement UNIX. <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - L'optimisation des algorithmes de recherche de texte en VBA : j'ai travaillé sur le fichier d'inventaire des paramètres. Je devais chercher des
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;infomations spécifiques dans les cellules contenant du code SAS. Comme il n'existe pas de règle stricte pour l'écriture d'un code SAS, il a fallu 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prendre en compte de nombreux cas différents pour identifier une table. Par exemple, pour récupérer toutes les tables de la bibliothèque "ZDB" et 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leur attribuer un rôle, je devais gérer toutes les syntaxes possibles permettant de créer une table (comme l'instruction DATA, le CREATE TABLE en 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SQL, ou encore l'option OUT=). <br>
+                    infomations spécifiques dans les cellules contenant du code SAS. Comme il n'existe pas de règle stricte pour l'écriture d'un code SAS, il a fallu 
+                    prendre en compte de nombreux cas différents pour identifier une table. Par exemple, pour récupérer toutes les tables de la bibliothèque "ZDB" et 
+                    leur attribuer un rôle, je devais gérer toutes les syntaxes possibles permettant de créer une table (comme l'instruction DATA, le CREATE TABLE en 
+                    SQL, ou encore l'option OUT=). <br>
                     <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; <strong>Difficultés logistiques et stratégiques :</strong> <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Le choix du support de la solution : fallait-il conserver le flux via boîte mail ou développer un outil totalement nouveau ?<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Optimisation du cycle d'exécution : pour assurer une mise à jour toutes les 15 minutes, il a fallu optimiser le programme afin que son temps 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d'exécution reste inférieur à 10 minutes, garantissant ainsi la stabilité de la chaîne de traitement.
-        </div> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Optimisation du cycle d'exécution : pour assurer une mise à jour toutes les 15 minutes, il a fallu optimiser le programme afin que son temps 
+                    d'exécution reste inférieur à 10 minutes, garantissant ainsi la stabilité de la chaîne de traitement. <br>
+                </p>
+                
+                    <a href="../../assets/Rapport_BUT3.pdf" alt="le tableau de bord" >Voir le rapport d'alternance</a>
+                </div> 
     </section>
 
     <footer class="footer">

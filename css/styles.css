@@ -3,7 +3,7 @@
 html{
     scroll-behavior: smooth;
     /* Ensure anchored scrolling accounts for the fixed header */
-    scroll-padding-top: var(--header-offset);
+    scroll-padding-top: 120px; /* Force l'espace même si on scrolle */
 }
 
 /* Reserve space so fixed header doesn't cover page content */
@@ -226,8 +226,9 @@ span{
 
 /* Buttons in the title keep their default sizing (no scoped flex rules applied) */
 
-/* Page-specific: make titre buttons flexible on the bilan page only */
-.page-bilan .titre nav{
+/* Page-specific: make titre buttons flexible on the bilan and about pages */
+.page-bilan .titre nav,
+.page-about .titre nav {
     width: 100%;
     max-width: 900px;
     display:flex;
@@ -237,15 +238,18 @@ span{
     align-items: center;
 }
 
-.page-bilan .titre nav .btn-but{
+.page-bilan .titre nav .btn-but,
+.page-about .titre nav .btn-but {
     flex: 1 1 140px;
     min-width: 120px;
     box-sizing: border-box;
 }
 
 @media (max-width: 900px){
-    .page-bilan .titre nav{ flex-wrap: wrap; }
-    .page-bilan .titre nav .btn-but{ flex: 1 1 120px; }
+    .page-bilan .titre nav,
+    .page-about .titre nav { flex-wrap: wrap; }
+    .page-bilan .titre nav .btn-but,
+    .page-about .titre nav .btn-but { flex: 1 1 120px; }
 }
 
 .btn-but:hover{
@@ -955,8 +959,8 @@ a.retour:active{
 }
 
 .about-section-hero .about-image {
-    width: 220px;
-    flex: 0 0 220px;
+    width: 420px;
+    flex: 0 0 370px;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 6px 16px rgba(16, 58, 87, 0.06);
@@ -992,6 +996,10 @@ a.retour:active{
     font-size: 1rem;
     line-height: 1.7;
 }
+.about-section {
+    scroll-margin-top: 120px;
+}
+
 /* Espace vertical entre les sections de la page A propos */
 .about-section + .about-section {
     margin-top: 3rem;

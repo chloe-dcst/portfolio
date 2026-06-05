@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#1e1e2e" rx="15"/>
+  <rect x="0" y="0" width="800" height="40" fill="#181825" rx="15"/>
+  
+  <!-- Window Controls -->
+  <circle cx="30" cy="20" r="6" fill="#f38ba8"/>
+  <circle cx="50" cy="20" r="6" fill="#f9e2af"/>
+  <circle cx="70" cy="20" r="6" fill="#a6e3a1"/>
+  
+  <!-- Title -->
+  <text x="400" y="80" fill="#cdd6f4" font-family="monospace" font-size="26" text-anchor="middle" font-weight="bold">ÉTUDE STATISTIQUE : IMPACT DES DÉROGATIONS</text>
+  
+  <!-- Avant Block -->
+  <rect x="50" y="140" width="200" height="200" fill="#313244" rx="10"/>
+  <text x="150" y="175" fill="#f9e2af" font-family="monospace" font-size="20" text-anchor="middle" font-weight="bold">AVANT</text>
+  <circle cx="150" cy="235" r="30" fill="none" stroke="#f9e2af" stroke-width="4"/>
+  <circle cx="140" cy="225" r="3" fill="#f9e2af"/>
+  <circle cx="160" cy="225" r="3" fill="#f9e2af"/>
+  <path d="M 135 250 L 165 250" fill="none" stroke="#f9e2af" stroke-width="4" stroke-linecap="round"/>
+  <text x="150" y="300" fill="#cdd6f4" font-family="monospace" font-size="14" text-anchor="middle">Satisfaction modérée</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M 270 240 L 310 240 L 310 220 L 340 250 L 310 280 L 310 260 L 270 260 Z" fill="#89dceb"/>
+  
+  <!-- Action / Dérogation -->
+  <circle cx="400" cy="225" r="35" fill="#cba6f7" opacity="0.2"/>
+  <text x="400" y="238" fill="#cba6f7" font-family="Arial, sans-serif" font-size="40" text-anchor="middle" font-weight="bold">%</text>
+  <text x="400" y="295" fill="#cdd6f4" font-family="monospace" font-size="16" text-anchor="middle" font-weight="bold">Dérogation</text>
+  <text x="400" y="315" fill="#a6adc8" font-family="monospace" font-size="12" text-anchor="middle">Geste commercial (MAAF)</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M 460 240 L 500 240 L 500 220 L 530 250 L 500 280 L 500 260 L 460 260 Z" fill="#89dceb"/>
+
+  <!-- Après Block -->
+  <rect x="550" y="140" width="200" height="200" fill="#313244" rx="10"/>
+  <text x="650" y="175" fill="#a6e3a1" font-family="monospace" font-size="20" text-anchor="middle" font-weight="bold">APRÈS</text>
+  <circle cx="650" cy="235" r="30" fill="none" stroke="#a6e3a1" stroke-width="4"/>
+  <circle cx="640" cy="225" r="3" fill="#a6e3a1"/>
+  <circle cx="660" cy="225" r="3" fill="#a6e3a1"/>
+  <path d="M 635 250 Q 650 260 665 250" fill="none" stroke="#a6e3a1" stroke-width="4" stroke-linecap="round"/>
+  <text x="650" y="300" fill="#cdd6f4" font-family="monospace" font-size="14" text-anchor="middle">Impact non décisif</text>
+  
+  <!-- Statistiques & Limites Block -->
+  <rect x="50" y="375" width="700" height="85" fill="#11111b" rx="10"/>
+  
+  <!-- Left Side: Warning / Volume -->
+  <circle cx="90" cy="417" r="15" fill="none" stroke="#f38ba8" stroke-width="3"/>
+  <text x="90" y="423" fill="#f38ba8" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle">!</text>
+  <text x="120" y="410" fill="#f38ba8" font-family="monospace" font-size="15" font-weight="bold">Limite : Données insuffisantes</text>
+  <text x="120" y="432" fill="#a6adc8" font-family="monospace" font-size="13">Échantillon faible de clients testés "Avant ET Après"</text>
+  
+  <!-- Divider -->
+  <line x1="480" y1="390" x2="480" y2="445" stroke="#45475a" stroke-width="2"/>
+  
+  <!-- Right Side: Stats Method -->
+  <text x="500" y="410" fill="#89b4fa" font-family="monospace" font-size="16" font-weight="bold">Méthode statistique :</text>
+  <text x="500" y="432" fill="#cdd6f4" font-family="monospace" font-size="14">Test d'indépendance du Khi-2</text>
+
+</svg>

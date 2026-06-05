@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission optimisation</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script src="../../assets/js/script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+         <a href="#" class="logo" >Portfolio</a>
+
+        <nav class="navbar">
+            <a href="../../index.html">Accueil</a>
+            <a href="../../projets.html">Mes projets</a>
+            <a href="../../bilan.html">Mon Parcours</a>
+            <a href="../../about.html">À propos de moi</a>
+        </nav>
+
+    </header>
+
+    <section class="projets animate-element">
+        <div class="projet-content">
+            <a href="../../projets.html" alt="page projet" class="retour">Retour</a>
+
+            <h1>Mission otpimisation</h1>
+            
+            <div class="description">
+                <div class="bulle-content">
+                    <span class="bulle">SAS</span>
+                    <span class="bulle">IMPALA</span>
+                </div>
+                <div class="texte-content">
+                    <span class="texte">durée : 210 heures</span>
+                </div>
+
+            </div>
+            <img src="../../assets/photo/opti.svg" alt="Schéma de l'optimisation SAS et Impala" class="project-image">
+
+            <h2>L'objectif</h2>
+                <p>
+                    Optimiser un programme SAS quotidien qui tourne en plus de 3 heures pour qu'il n'en fasse plus qu'une au maximum.
+                </p>
+                <br>
+            <h3>Le contexte</h3>
+            <br>
+                <p>
+                    Le programme que je devais optimiser extrait d'une base de données IMPALA les données d'un outil utilisé par les gestionnaires de la Santé Individuelle : le CRM. Ce script s'exécute du lundi au vendredi, toutes les semaines à partir de 6h, et met environ 3h à tourner. Cependant, juste après son exécution, un autre programme se lance à 10h pour concaténer une seconde source de données avec celles du CRM. L'ensemble alimente ensuite un tableau de bord qui génère des indicateurs sur les volumes de traités, d'entrées et de stocks, ainsi que sur les délais de traitement et leur évolution dans le temps.
+
+                    Il faut savoir que la table finale contient plus de 25 millions de lignes, ce qui signifie que chaque étape de traitement du programme est particulièrement lourde.
+                    <br>
+                    Mon objectif était donc d'optimiser ce programme afin de faire passer son temps d'exécution à moins d'une heure, tout en garantissant que les chiffres du tableau de bord restent strictement identiques, avec une marge d'erreur acceptable de moins de 5 %.
+                </p>
+            <br>
+            <h3>La description du projet</h3>
+            <br>
+           <p>
+                Le programme que je devais optimiser extrait d'une base de données IMPALA les données d'un outil utilisé par les gestionnaires de la Santé Individuelle : le CRM. Ce script s'exécute du lundi au vendredi, toutes les semaines à partir de 6h, et met environ 3h à tourner. Cependant, juste après son exécution, un autre programme se lance à 10h pour concaténer une seconde source de données avec celles du CRM. L'ensemble alimente ensuite un tableau de bord qui génère des indicateurs sur les volumes de traités, d'entrées et de stocks, ainsi que sur les délais de traitement et leur évolution dans le temps.
+            </p>
+
+            <p>
+                Il faut savoir que la table finale contient plus de 25 millions de lignes, ce qui signifie que chaque étape de traitement du programme est particulièrement lourde. Mon objectif était donc d'optimiser ce programme afin de faire passer son temps d'exécution à moins d'une heure, tout en garantissant que les chiffres du tableau de bord restent strictement identiques, avec une marge d'erreur acceptable de moins de 5 %.
+            </p>
+
+            <p>
+                Dans un premier temps, j'ai commencé par lire le programme et comprendre chaque étape pour identifier ce que je pouvais améliorer afin de réduire le temps d'exécution. J'ai ainsi supprimé des étapes qui n'étaient pas nécessaires, notamment celles qui se répétaient. 
+            </p>
+
+            <p>
+                Ensuite, j'ai totalement modifié la méthode de calcul du délai. À l'origine, le script utilisait une fonction personnalisée appelée "Délai_ouvré". Cependant, cette fonction s'avérait très lourde, même sur de petits volumes ; dans notre cas, elle demandait plus de 30 minutes d'exécution. Je l'ai donc remplacée par une succession de conditions (if... else) afin de différencier deux cas de figure. En effet, le calcul des jours ouvrés diffère pour la marque MAAF (dont les gestionnaires sont basés à Niort) et les marques MMA / GMF (dont les gestionnaires sont sur le site de Strasbourg, qui bénéficie de deux jours fériés supplémentaires). Les délais se basant sur les jours ouvrés, il était primordial de bien séparer ces deux logiques.
+            </p>
+
+            <p>
+                Par la suite, pour aller plus loin et alléger significativement les traitements, mon tuteur m'a suggéré de mettre en place un historique plutôt que de rejouer le script sur l'entièreté de la table à chaque exécution. J'ai choisi d'extraire les données de la base IMPALA sur les 6 derniers mois. Néanmoins, ce filtre temporel ne suffisait pas : un dossier ouvert il y a plus de six mois pouvait encore être en cours, ce qui risquait de fausser la reconstitution des stocks et des délais par manque de données. Il a donc fallu que je récupère dans l'historique toutes les lignes associées à un numéro de demande identique à mon extraction. Ce fut l'une des étapes les plus complexes de mon projet, car j'ai rencontré des difficultés pour reconstituer correctement les demandes et cibler uniquement les lignes nécessaires afin de garantir la stricte conformité du tableau de bord.
+            </p>
+
+            <p>
+                C'est lors de la validation de cette reconstitution des stocks qu'un autre problème est apparu. En comme parant quotidiennement le volume de données entre la table d'origine et ma table optimisée, j'ai constaté des écarts : la table d'origine comptabilisait plus de lignes d'un jour à l'autre pour des périodes passées. Je me suis rendu compte que certaines données, censées être intégrées au fil de l'eau, arrivaient en réalité de manière asynchrone avec plusieurs jours de retard. Initialement, ma méthode consistait simplement à injecter dans l'historique les lignes dont la date n'était pas encore présente. Ce fonctionnement basé uniquement sur la date excluait définitivement les données arrivées tardivement pour des journées déjà traitées.
+            </p>
+
+            <p>
+                Pour pallier ce problème et sécuriser l'alimentation, j'ai repensé la logique d'historisation en trois étapes bien précises. D'abord, j'effectue une première insertion des lignes dont le numéro de demande est totalement absent de l'historique. Ensuite, j'identifie la liste des dates pour lesquelles des données tardives ont été reçues, et je supprime temporairement les lignes correspondantes dans l'historique pour éviter toute création de doublons. Enfin, je réinjecte l'intégralité des données actualisées pour ces mêmes dates manquantes. Cette stratégie a permis de fiabiliser totalement la complétude de la base de données.
+            </p>
+
+            <p>
+                Enfin, j'ai été confrontée à un autre problème majeur : à un moment donné du traitement, les lignes ne se triaient pas dans le même ordre qu'auparavant, ce qui faussait à nouveau les calculs de stocks et de délais. Nous avons identifié que cela provenait de l'outil de gestion : lors d'un transfert de dossier, ce dernier change d'état, se clôture, puis se rouvre, alors qu'en réalité il n'est jamais clos. Pour pallier cette anomalie de l'outil, j'ai dû ajouter un numéro de ligne faisant office de clé de tri, garantissant ainsi que toutes les étapes de la demande restent toujours dans le bon ordre chronologique.
+            </p>
+            
+            <br>
+            <h3>Le bilan personnel</h3>
+            <br>
+                <p>
+                    Cette mission a été une super opportunité pour moi de monter en compétences en programmation SAS. Au-delà du code, j'ai surtout appris à développer une vraie méthodologie pour traquer les bugs, par exemple en vérifiant systématiquement la cohérence de la volumétrie et en m'assurant qu'il n'y avait aucun doublon dans les tables. 
+                </p>
+
+                <p>
+                    J'ai aussi appris à mettre en place une phase de recette complète pour valider la conformité de mes résultats avant de passer le projet en production. Ce défi m'a permis de prouver ma persévérance, ma capacité à ne rien lâcher face à un problème technique complexe, et mon envie de réussir les challenges qu'on me donne.
+                </p>
+                    
+                    
+        </div> 
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <ul class="list">
+                <li><a href="../../index.html">Accueil</a></li>
+                <li><a href="../../projets.html">Mes projets</a></li>
+                <li><a href="../../bilan.html">Mon Parcours</a></li>
+                <li><a href="../../about.html">A propos de moi</a></li>
+            </ul>
+    
+            <div class="social">   
+                <a href="javascript:void(0);" onclick="ouvrirPopup()">
+                    <img class="social-icon" src="../../assets/photo/mail.png" alt="mail">
+                </a>
+
+                <div id="popupMail" class="mail-overlay" onclick="fermerPopup()">
+                    <div class="mail-content" onclick="event.stopPropagation()">
+                        <p id="monEmail" style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px;">chloedecoust@gmail.com</p>
+                        <button class="btn-copier" onclick="copierAdresse()">Copier l'adresse</button>
+                        <p id="msgConfirmation" style="display:none; color: #28a745; margin-top: 10px; font-size: 0.9em;">Copié !</p>
+                    </div>
+                </div>
+                <a href="https://www.facebook.com/profile.php?id=61554652330017">
+                    <img class="social-icon" src="../../assets/photo/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/chloe-decoust-333207294">
+                    <img class="social-icon" src="../../assets/photo/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    
+        <div class="copyright">
+            &copy; 2026 Chloé Découst.
+        </div>
+    </footer>
+</body>
+</html>

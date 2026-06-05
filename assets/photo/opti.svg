@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" fill="#1e1e2e" rx="15"/>
+  <rect x="0" y="0" width="800" height="40" fill="#181825" rx="15"/>
+  
+  <!-- "Mac" style window buttons -->
+  <circle cx="30" cy="20" r="6" fill="#f38ba8"/>
+  <circle cx="50" cy="20" r="6" fill="#f9e2af"/>
+  <circle cx="70" cy="20" r="6" fill="#a6e3a1"/>
+  
+  <!-- Titre -->
+  <text x="400" y="80" fill="#cdd6f4" font-family="monospace" font-size="28" text-anchor="middle" font-weight="bold">PROJET OKKO : OPTIMISATION SAS &amp; IMPALA</text>
+  
+  <!-- Encadré AVANT -->
+  <rect x="50" y="120" width="300" height="340" fill="#313244" rx="10"/>
+  <text x="200" y="160" fill="#f38ba8" font-family="monospace" font-size="22" text-anchor="middle" font-weight="bold">AVANT</text>
+  
+  <!-- Icône temps Avant -->
+  <circle cx="100" cy="205" r="20" fill="none" stroke="#f38ba8" stroke-width="3"/>
+  <path d="M 100 195 L 100 205 L 110 210" fill="none" stroke="#f38ba8" stroke-width="3"/>
+  <text x="135" y="210" fill="#cdd6f4" font-family="monospace" font-size="16">&gt; 3 Heures / jour</text>
+  
+  <!-- Icône BDD Avant -->
+  <path d="M 80 250 Q 100 240 120 250 L 120 280 Q 100 290 80 280 Z" fill="none" stroke="#f38ba8" stroke-width="3"/>
+  <path d="M 80 265 Q 100 275 120 265" fill="none" stroke="#f38ba8" stroke-width="3"/>
+  <text x="135" y="265" fill="#cdd6f4" font-family="monospace" font-size="16">Rejoue toute la table</text>
+  <text x="135" y="285" fill="#a6adc8" font-family="monospace" font-size="13">(> 25 Millions de lignes)</text>
+  
+  <!-- Icône Fonction Avant -->
+  <text x="90" y="340" fill="#f38ba8" font-family="monospace" font-size="20" font-weight="bold">&lt;/&gt;</text>
+  <text x="135" y="335" fill="#cdd6f4" font-family="monospace" font-size="16">Fonction lourde</text>
+  <text x="135" y="355" fill="#a6adc8" font-family="monospace" font-size="13">"Délai_ouvré()"</text>
+
+  <!-- Icône bug Avant -->
+  <circle cx="100" cy="405" r="16" fill="none" stroke="#f38ba8" stroke-width="3"/>
+  <text x="100" y="411" fill="#f38ba8" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle">!</text>
+  <text x="135" y="402" fill="#cdd6f4" font-family="monospace" font-size="16">Perte d'ordre</text>
+  <text x="135" y="422" fill="#a6adc8" font-family="monospace" font-size="13">Faux délais avec le CRM</text>
+
+  <!-- Flèche centrale -->
+  <path d="M 360 270 L 410 270 L 410 250 L 440 280 L 410 310 L 410 290 L 360 290 Z" fill="#89dceb"/>
+
+  <!-- Encadré APRES -->
+  <rect x="450" y="120" width="310" height="340" fill="#313244" rx="10"/>
+  <text x="605" y="160" fill="#a6e3a1" font-family="monospace" font-size="22" text-anchor="middle" font-weight="bold">APRÈS</text>
+  
+  <!-- Icône temps Après -->
+  <circle cx="500" cy="205" r="20" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+  <path d="M 500 195 L 500 205 L 515 205" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+  <text x="535" y="210" fill="#cdd6f4" font-family="monospace" font-size="16">&lt; 1 Heure / jour</text>
+
+  <!-- Icône BDD Après -->
+  <path d="M 480 250 Q 500 240 520 250 L 520 280 Q 500 290 480 280 Z" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+  <path d="M 480 265 Q 500 275 520 265" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+  <text x="535" y="265" fill="#cdd6f4" font-family="monospace" font-size="16">Historisation ciblée</text>
+  <text x="535" y="285" fill="#a6adc8" font-family="monospace" font-size="13">(Delta de 6 mois)</text>
+
+  <!-- Icône Fonction Après -->
+  <text x="490" y="340" fill="#a6e3a1" font-family="monospace" font-size="20" font-weight="bold">&lt;/&gt;</text>
+  <text x="535" y="335" fill="#cdd6f4" font-family="monospace" font-size="16">Conditions "If...Else"</text>
+  <text x="535" y="355" fill="#a6adc8" font-family="monospace" font-size="13">(Niort vs Strasbourg)</text>
+  
+  <!-- Icône Fix Après -->
+  <circle cx="500" cy="405" r="16" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+  <path d="M 492 405 L 498 412 L 508 398" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+  <text x="535" y="402" fill="#cdd6f4" font-family="monospace" font-size="16">Clé de tri ajoutée</text>
+  <text x="535" y="422" fill="#a6adc8" font-family="monospace" font-size="13">Précision à 100% garantie</text>
+  
+</svg>

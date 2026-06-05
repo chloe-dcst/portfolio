@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etude de satisfaction</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script src="../../assets/js/script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+         <a href="#" class="logo" >Portfolio</a>
+
+        <nav class="navbar">
+            <a href="../../index.html">Accueil</a>
+            <a href="../../projets.html">Mes projets</a>
+            <a href="../../bilan.html">Mon Parcours</a>
+            <a href="../../about.html">À propos de moi</a>
+        </nav>
+
+    </header>
+
+    <section class="projets animate-element">
+        <div class="projet-content">
+            <a href="../../projets.html" alt="page projet" class="retour">Retour</a>
+
+            <h1>Etude de satisfaction</h1>
+            
+            <div class="description">
+                <div class="bulle-content">
+                    <span class="bulle">SAS</span>
+                    <span class="bulle">EXCEL</span>
+                    <span class="bulle">PowerPoint</span>
+                </div>
+                <div class="texte-content">
+                    <span class="texte">durée : 50 heures</span>
+                </div>
+
+            </div>
+            <img src="../../assets/photo/satisfaction_derogation.svg" alt="Schéma statistique de l'étude de dérogation" class="project-image">
+
+            <h2>L'objectif</h2>
+                <p>
+                   Réaliser une étude pour mesurer l'impact des gestes commerciaux (une dérogation) sur la satisfaction client.
+                </p>
+                <br>
+            <h3>Le contexte</h3>
+            <br>
+               <p>
+                    Le contexte de ce projet repose sur la gestion de la relation client : dans certains cas précis, les clients peuvent recevoir un geste commercial de la part de la MAAF. Il existe deux grands types de dérogations : soit une réduction ou un remboursement sur la <b>cotisation</b>, soit un coup de pouce sur une <b>prestation</b>. 
+                </p>
+
+                <p>
+                    Mon étude sert à mesurer l'impact de ces gestes sur l'expérience client. L'objectif est de savoir s'il y a une réelle évolution entre la satisfaction du client avant d'avoir eu cette dérogation, et après l'avoir obtenue, pour vérifier si l'effort financier de l'entreprise est efficace.
+                </p>
+            <br>
+            
+            <h3>La description du projet</h3>
+            <br>
+           <p>
+                Pour réaliser cette étude, j'ai récupéré une table SAS contenant toutes les informations sur les clients ayant répondu à une enquête de satisfaction, leurs notes de satisfaction et s'ils ont obtenu une dérogation, par exemple. Ensuite, j'ai exporté ces données sur Excel pour réaliser des tests d'indépendance du Khi-deux afin de chercher s'il y avait un lien statistique entre les variables. Au niveau des résultats, j'en ai conclu qu'il n'y avait pas de réel impact : obtenir un geste commercial ne se traduisait pas forcément par une satisfaction plus élevée après coup.
+            </p>
+
+            <p>
+                Cependant, le résultat n'est pas 100 % fiable et cela s'explique principalement par un manque de données. Mon volume d'observations était trop faible, et surtout, il y avait beaucoup trop peu de clients qui avaient répondu à une enquête de satisfaction à la fois <b>avant</b> et <b>après</b> avoir reçu leur dérogation. 
+            </p>
+
+            <p>
+                Pour aller plus loin, j'ai donc préconisé à mon équipe de refaire cette étude plus tard avec un historique plus solide. Pour cela, ma recommandation est de proposer l'enquête de satisfaction de manière systématique à la fin de chaque appel, et non plus de façon ponctuelle, afin de collecter un maximum de retours.
+            </p>
+            <br>
+            <h3>Le bilan personnel</h3>
+            <br>
+            <p>
+                Cette mission a été une super opportunité d'appliquer concrètement les compétences en statistiques que j'ai acquises en cours sur un vrai cas d'entreprise. Au-delà des calculs, j'ai surtout appris à prendre du recul pour tirer de réelles conclusions de mes résultats et à être force de proposition en faisant des préconisations concrètes.
+            </p>
+                       
+        </div> 
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <ul class="list">
+                <li><a href="../../index.html">Accueil</a></li>
+                <li><a href="../../projets.html">Mes projets</a></li>
+                <li><a href="../../bilan.html">Mon Parcours</a></li>
+                <li><a href="../../about.html">A propos de moi</a></li>
+            </ul>
+    
+            <div class="social">   
+                <a href="javascript:void(0);" onclick="ouvrirPopup()">
+                    <img class="social-icon" src="../../assets/photo/mail.png" alt="mail">
+                </a>
+
+                <div id="popupMail" class="mail-overlay" onclick="fermerPopup()">
+                    <div class="mail-content" onclick="event.stopPropagation()">
+                        <p id="monEmail" style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px;">chloedecoust@gmail.com</p>
+                        <button class="btn-copier" onclick="copierAdresse()">Copier l'adresse</button>
+                        <p id="msgConfirmation" style="display:none; color: #28a745; margin-top: 10px; font-size: 0.9em;">Copié !</p>
+                    </div>
+                </div>
+                <a href="https://www.facebook.com/profile.php?id=61554652330017">
+                    <img class="social-icon" src="../../assets/photo/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/chloe-decoust-333207294">
+                    <img class="social-icon" src="../../assets/photo/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    
+        <div class="copyright">
+            &copy; 2026 Chloé Découst.
+        </div>
+    </footer>
+</body>
+</html>
